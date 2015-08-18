@@ -213,11 +213,12 @@
 
 		</main>
 	</div>
-	
+
 	<div>
 		<section class="globalEvents">
 			<h2>Global Events</h2>
 			<a href="http://devdocs.io/dom/globaleventhandlers">All GlobalEventHandlers</a>
+			<p>Events are prevented by default! you can avoid that by returning true at the end of your event function (<code>return true</code>)</p>
 			<div>
 				<b>Usage:</b>
 				<pre class="code"><code>
