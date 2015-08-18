@@ -1,0 +1,78 @@
+/* BASE */
+
+body, html
+{
+	background: @colorBackground;
+	background-repeat: repeat-y;
+	background-size: cover;
+	color: @colorFillDark;
+	font-family: @fontMain;
+	font-size: @fontMainSize;
+	height: 100%;
+}
+
+a, .link
+{
+	text-decoration: none;
+	color: @colorMain;
+}
+
+h1, h2, h3
+{
+	margin: 0;
+	padding: .5em 0;
+	font-family: @fontTitle;
+	a
+	{
+		position: relative;
+		&:before, &:after
+		{
+			width: 1px;
+			height: 1px;
+			position: absolute;
+		}
+		&:before
+		{
+			left: -.2em;
+			background: @colorMain;
+			box-shadow: 
+				0 1px 0 0  @colorMain,
+				0 2px 0 0  @colorMain,
+				0 3px 0 0  @colorMain,
+				0 4px 0 0  @colorMain,
+				0 5px 0 0  @colorMain,
+				0 6px 0 0  @colorMain,
+				1px 0 0 0  @colorMain,
+				2px 0 0 0  @colorMain,
+				3px 0 0 0  @colorMain,
+				4px 0 0 0  @colorMain,
+				5px 0 0 0  @colorMain,
+				6px 0 0 0  @colorMain,
+			;
+		}
+	}
+}
+
+h2
+{
+	text-transform: uppercase;
+	color: @colorMain;
+}
+
+p > code
+{
+	background: rgba(0,0,0,.03);
+	padding: 0 .2em;
+}
+
+p:first-child
+{
+	font-size: 1.1em;
+}
+
+article img,
+p img,
+footer img
+{
+	max-width: 100%;
+}

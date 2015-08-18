@@ -1,0 +1,135 @@
+.fork-me
+{
+	display: none;
+	@media all and (min-width: 60rem)
+	{
+		display: block;
+	}
+	img
+	{
+		position: absolute; top: 0; right: 0; border: 0;
+	}
+}
+
+
+cheatsheet
+{
+
+	background: darken(@colorFillLight, 5%);
+
+	header
+	{
+		color: lighten(@colorFillDark, 5%);
+		background: @colorMain;
+		padding: .5em;
+		.border(darken(@colorMain, 10%));
+		a
+		{
+			color: @colorFillLight;
+		}
+
+		a.logo
+		{
+			line-height: 0;
+			max-height: 100%;
+			img
+			{
+
+			}
+		}
+		h1
+		{
+			padding: 0;
+		}
+		p
+		{
+			margin: 0;
+		}
+	}
+
+	main
+	{
+		height: auto;
+		@media all and (min-width: 40rem)
+		{
+			height: 120em;
+		}
+		@media all and (min-width: 55rem)
+		{
+			height: 80em;
+		}
+		@media all and (min-width: 75rem)
+		{
+			height: 65em;
+		}
+		section
+		{
+			width: 100%;
+			@media all and (min-width: 40rem)
+			{
+				width: 50%;
+			}
+			@media all and (min-width: 55rem)
+			{
+				width: 33%;
+			}
+			@media all and (min-width: 75rem)
+			{
+				width: 25%;
+			}
+		}
+	}
+
+	main section
+	{
+		@media all and (min-width: 40rem)
+		{
+			border-right: 1px solid @colorMain;
+		}
+		padding: 1em;
+		article
+		{
+			padding: 1em;
+		}
+		div
+		{
+			padding-left: 1em;
+		}
+	}
+
+	.globalEvents
+	{
+		margin: 0 0 1em;
+		padding: 1em;
+		@media all and (min-width: 40rem)
+		{
+			height: 60em;
+		}
+		@media all and (min-width: 55rem)
+		{
+			height: 50em;
+		}
+		@media all and (min-width: 75rem)
+		{
+			height: 40em;
+		}
+		
+		article
+		{
+			height: 100%;
+			width: 100%;
+			div
+			{
+				padding: .2em;
+			}
+			> div
+			{
+				padding: 1em;
+				@media all and (min-width: 40rem)
+				{
+					border-right: 1px solid @colorMain;
+				}
+			}
+		}
+	}
+}

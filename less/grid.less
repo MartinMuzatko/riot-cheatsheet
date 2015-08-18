@@ -1,0 +1,95 @@
+*
+{
+	box-sizing: border-box; 
+}
+
+*:before, 
+*:after 
+{
+	content: '';
+}
+
+/* TOOLBELT */
+
+.group
+{
+	zoom: 1;
+
+	&:after
+	{
+		clear: both;
+	}
+
+	&:before,
+	&:after
+	{
+		display: table;
+	}
+}
+
+.groupFloat(@float: left)
+{
+	.group
+	&> *
+	{
+		float: @float;
+	}
+}
+
+.row-fluid
+{
+	.group;
+	> *
+	{
+		float: left;
+		display: block;
+		min-height: 1px;
+		margin-left: 2.127659574468085%;
+
+		&:first-child
+		{
+			margin-left: 0;
+		}
+	}
+}
+
+.span12{width:100%;}
+.span11{width:91.48936170212765%;}
+.span10{width:82.97872340425532%;}
+.span9{width:74.46808510638297%;}
+.span8{width:65.95744680851064%;}
+.span7{width:57.44680851063829%;}
+.span6{width:48.93617021276595%;}
+.span5{width:40.42553191489362%;}
+.span4{width:31.914893617021278%;}
+.span3{width:23.404255319148934%;}
+.span2{width:14.893617021276595%;}
+.span1{width:6.382978723404255%;}
+
+/* SELF CORRECTING GRID */
+
+.generate-columns(@n, @i: 1) when (@i =< @n) 
+{
+	> *:nth-child(@{cols}n+1):nth-last-child(@{i})  
+	{
+		width: 100% / @i;
+		~ *
+		{
+			width: 100% / @i;
+		}
+	}
+	.generate-columns(@n, (@i + 1));
+}
+
+
+
+.selfgrid
+{
+	.generate-columns(@cols);
+	.group;
+	> *
+	{
+		float: left;
+		width: 100% / @cols;
+	}
+}
