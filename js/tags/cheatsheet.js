@@ -8,7 +8,7 @@
 				<h1>Cheatsheet</h1> <small>{cheatsheet.version}</small>
 			</div>
 		</div>
-		<div flex="40">
+		<div flex="40" class="written-by">
 			<p>Written with &lt;3 by <a href="https://github.com/{cheatsheet.author}">@{cheatsheet.author}</a></p>
 			<p><small>Part of <a href="happy-css.com">happy-css.com</a></small></p>
 		</div>
