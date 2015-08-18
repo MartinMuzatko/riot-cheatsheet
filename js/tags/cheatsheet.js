@@ -202,7 +202,7 @@
 			<div each={section, sections in events}>
 				<h3>{section}</h3>
 				<div each={event in sections}>
-					<a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/{event}">{event}</a>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/Events/{event}">{event}</a>
 				</div>
 			</div>
 		</article>
