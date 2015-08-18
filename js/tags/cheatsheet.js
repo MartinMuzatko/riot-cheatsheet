@@ -72,6 +72,7 @@
 					</pre>
 				</article>
 				<h3><a href="{rioturl}guide/#nested-html">Yield</a></h3>
+				<p>HTML writtin inside custom tags you call, can be retrieved via the yield tag</p>
 				<pre class="code">
 					<code>
 						&lt;yield/&gt;
