@@ -38,10 +38,10 @@
 						&lt;/div&gt;
 						&lt;script&gt;
 							this.items = 
-							{
+							\{
 								file: 'riot.png',
 								path: 'images/'
-							}
+							\}
 						&lt;/script&gt;
 					</code>
 				</pre>
