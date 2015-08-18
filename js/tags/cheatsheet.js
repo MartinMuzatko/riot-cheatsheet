@@ -9,7 +9,7 @@
 			</div>
 		</div>
 		<div flex="40" class="written-by">
-			<p>Written with &lt;3 by <a href="https://github.com/{cheatsheet.author}">@{cheatsheet.author}</a></p>
+			<p>Written with <span style="color: white">&#9829;</span> by <a href="https://github.com/{cheatsheet.author}">@{cheatsheet.author}</a></p>
 			<p><small>This is a privately maintained inofficial cheatsheet, but you are welcome to contribute!</small></p>
 			<p><small>Part of <a href="http://happy-css.com">happy-css.com</a></small></p>
 		</div>
