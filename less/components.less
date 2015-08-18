@@ -1,0 +1,158 @@
+
+// AUTOBREAK
+// ----------------------------------------------
+// All containers within are centered 
+// and automatically spread across lines on demand
+
+.autobreak(@align: center)
+{
+	text-align: @align;
+	> *
+	{
+		vertical-align: top;
+		display: inline-block;
+	}
+}
+
+.persona(@size: 4rem)
+{
+	margin: 1em;
+	padding: 2em 1em;
+	img
+	{
+		.width(@size);
+		.height(@size);
+	}
+	h1,h2,h3
+	{
+		.outstand(@colorFillDark);
+	}
+	figcaption
+	{
+
+	}
+}
+
+.rounded
+{
+	border-radius: 50%;
+}
+
+.personaFloat(@size: 4em)
+{
+	.persona(@size);
+	> *
+	{
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
+
+// TITLEGROUP
+// ----------------------------------------------
+// Demands a title and a subtitle
+// For headings and captions of titles
+
+.titlegroup(@align: left)
+{
+	> *
+	{
+		text-align: @align;
+		display: block;
+		.font-size(1em);
+	}
+
+	> span
+	{
+		font-family: @fontCaption;
+	}
+}
+
+// TILE
+// ----------------------------------------------
+// used for tiles/boxes with a bevel
+
+.tileBeveled
+(
+	@background: @colorMain, 
+	@bevel: @bevelLeftLower, 
+	@bevelSize: 2rem
+)
+{
+	.bevel(@background, @bevel, @bevelSize);
+	.border(@colorLight, @border);
+
+	&:hover
+	{
+		cursor: pointer;
+		.bevel(lighten(@background, 10%), @bevel, @bevelSize);
+	}
+}
+
+.tile(@background: @colorMain)
+{
+	background: @background;
+	.border(@colorLight, @border);
+
+	&:hover
+	{
+		cursor: pointer;
+		background: lighten(@background, 10%);
+	}
+}
+
+.section
+{
+	margin: 0 0 4em;
+	padding: 1em @paddingContent;
+	background: @colorBackground;
+}
+
+.iconnav
+{
+	*
+	{
+		text-shadow: none;
+	}
+	.autobreak;
+	figure
+	{
+		.tileBeveled;
+		.persona(6em);
+		.font-size(1.1em);
+		width: 20vw;
+		margin: 1em;
+		padding: 2em 1em;
+		height: 16.5em;
+	}
+
+	figcaption
+	{
+		.titlegroup(center);
+		.transition(.5s);
+		margin: 1em 0;
+
+		> span,
+		> h1, > h2, > h3
+		{
+			font-variant: small-caps;
+			color: @colorFillLight;
+		}
+
+		> span
+		{
+			font-style: italic;
+		}
+
+		> h1, > h2, > h3
+		{
+			font-size: 1.33em;
+			margin: 1.25em 0 .5em;
+		}
+
+		p
+		{
+			margin: 0;
+		}
+	}
+}

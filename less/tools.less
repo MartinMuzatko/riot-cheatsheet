@@ -1,0 +1,191 @@
+/* TOOLS */
+
+
+
+// FONT-SIZE
+// ----------------------------------------------
+// scren dependend font-size
+
+.font-size(@size: 1em;)
+{
+	font-size: @size * 1vw;
+}
+
+// WIDTH
+// ----------------------------------------------
+// scren dependend font-size
+
+.width(@size: 35em;)
+{
+	width: @size * 1vw;
+}
+
+.height(@size: 35em;)
+{
+	height: @size * 1vw;
+}
+// BORDER
+// ----------------------------------------------
+// set a box-shadow border
+
+.border(@color: @colorShadow, @size: -.3em)
+{
+	box-shadow: inset 0 @size 0 @color;
+}
+
+.centerContainer
+{
+	display: block;
+	margin: 0 auto;
+}
+
+.alignleft
+{
+	float: left;
+	margin-right: 1em;
+}
+
+// SHIFTCOLOR
+// ----------------------------------------------
+// use default saturation and lightness while changing the hue first.
+
+.shiftColor
+(
+	@hue: @colorMainHue,
+	@saturation: @colorMainSaturation,
+	@lightness: @colorMainLightness
+)
+{
+	@shiftColor: hsl(@hue, @saturation, @lightness);
+}
+
+// BEVEL
+// ----------------------------------------------
+// background with one edge beveled
+
+.bevel
+(
+	@color: @colorMain,
+	@angle: @bevelLeftLower,
+	@size: 10%
+)
+{
+	background-image: linear-gradient(
+		@angle,
+		transparent 0, 
+		transparent @size, 
+		@color @size, 
+		@color 100% 
+	)
+}
+
+.halfSlant
+(
+	@color: @colorFillDark,
+	@bevel: @bevelLeftUpper,
+	@size:  1rem
+)
+{
+	.bevel(@color, @bevel, @size);
+	position: relative;
+	z-index: 10;
+	&:after
+	{
+		@nsize: @size*1.5;
+		.bevel(@color, @bevel+180, 50%);
+		content: '';
+		width: @nsize;
+		height: @nsize;
+		position: absolute;
+		right: -@nsize;
+	}
+}
+
+// TRANSITION
+// ----------------------------------------------
+
+.transition
+(
+	@duration: 1s,
+	@delay: 0s,
+	@function: ease,
+	@property: all
+)
+{
+	transition-duration: @duration;
+	transition-delay: @delay;
+	transition-timing-function: @function;
+	transition-property: @property;
+}
+
+.outstand(@color: @colorLight, @offset: 0)
+{
+	text-shadow: 0 1px @offset @color;
+}
+
+.invert
+{
+	color: @colorFillDark;
+	a
+	{
+		color: @colorMain;
+		.outstand(@colorFillLight);
+	}
+}
+
+.light
+{
+	background: @colorFillLight;
+	color: @colorFillDark;
+}
+
+.fade-gradient(@dir: to left, @color: @colorBackground)
+{
+	background: linear-gradient(
+		@dir,
+		@color 0%,
+		transparent 100%
+	)
+}
+
+.input
+{
+	background: @colorFillLight;
+	color: @colorFillDark;
+	width: 100%;
+	display: block;
+	border: 1px solid @colorFillDark;
+	line-height: 2;
+	padding: 0 1em;
+	margin-bottom: 1em;
+}
+
+.doButton(@background: @colorMain, @text: @colorFillLight)
+{
+	@border: .3em;
+	.border(@size: -@border);
+	.input;
+	.transition(.5s);
+	background: @background;
+	color: @text;
+	border: 0;
+	border-radius: .2em;
+	padding: .2em 1em .5em;
+	position: relative;
+	top: 0;
+	display: inline-block;
+	width: auto;
+
+	&:hover
+	{
+		background: lighten(@background, 5%);
+		color: lighten(@text, 5%);
+	}
+	&:focus
+	{
+		box-shadow: none;
+		top: @border;
+		background: darken(@background, 5%);
+		color: darken(@text, 5%);
+	}
+}

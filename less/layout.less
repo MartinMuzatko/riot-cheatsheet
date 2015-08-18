@@ -1,0 +1,75 @@
+cheatsheet
+{
+	main
+	{
+		height: auto;
+		@media all and (min-width: 40rem)
+		{
+			height: 120em;
+		}
+		@media all and (min-width: 55rem)
+		{
+			height: 80em;
+		}
+		@media all and (min-width: 75rem)
+		{
+			height: 65em;
+		}
+		section
+		{
+			background: darken(@colorFillLight, 5%);
+			width: 100%;
+			@media all and (min-width: 40rem)
+			{
+				width: 50%;
+			}
+			@media all and (min-width: 55rem)
+			{
+				width: 33%;
+			}
+			@media all and (min-width: 75rem)
+			{
+				width: 25%;
+			}
+		}
+	}
+
+	section
+	{
+		padding: 1em;
+		article
+		{
+			padding: 1em;
+		}
+		div
+		{
+			padding-left: 1em;
+		}
+	}
+
+	.globalEvents
+	{
+		@media all and (min-width: 40rem)
+		{
+			height: 60em;
+		}
+		@media all and (min-width: 55rem)
+		{
+			height: 50em;
+		}
+		@media all and (min-width: 75rem)
+		{
+			height: 40em;
+		}
+		
+		article
+		{
+			height: 100%;
+			width: 100%;
+			div
+			{
+				padding: .2em;
+			}
+		}
+	}
+}

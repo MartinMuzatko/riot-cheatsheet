@@ -1,0 +1,67 @@
+/* FORMS */
+
+@padborder: .4em;
+
+
+.inputtext
+{
+	border: @padborder solid transparent;
+	.transition(.5s);
+	&:focus
+	{
+		border: @padborder solid @colorMain;
+		border-radius: .2em;
+		animation-duration: 1s;
+		animation-name: blink;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		
+	}
+}
+
+@keyframes blink
+{
+	0%
+	{
+		border: @padborder solid @colorMain;
+	}
+	100%
+	{
+		border: @padborder solid lighten(@colorMain, 5%);
+	}
+}
+
+label
+{
+	display: block;
+	width: 100%;
+	line-height: 2;
+}
+
+input[type=text],
+input[type=email]
+{
+	.input;
+	.inputtext;
+}
+
+input[type=submit],
+
+
+.search
+{
+	width: 30%;
+}
+
+.button
+{
+	.doButton;
+	&.main
+	{
+		.doButton;
+	}
+	&.secondary
+	{
+		.doButton(@colorSecondary, @colorFillDark)
+	}
+}
