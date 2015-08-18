@@ -1,8 +1,8 @@
 <cheatsheet>
 	<header layout="row" layout-align="space-between">
 		<div layout="row" flex="60">
-			<a class="logo" href="http://riotjs.com">
-				<img src="http://riotjs.com/img/logo/riot120x.png" alt="RiotJS">
+			<a class="logo" href="{rioturl}">
+				<img src="{rioturl}img/logo/riot120x.png" alt="RiotJS">
 			</a>
 			<div layout="row" layout-align="center">
 				<h1>Cheatsheet</h1> <small>{cheatsheet.version}</small>
@@ -17,7 +17,7 @@
 		<section>
 			<h2>HTML CONSTRUCTS</h2>
 
-			<h3><a href="http://riotjs.com/guide/#loops">Foreach</a></h3>
+			<h3><a href="{rioturl}guide/#loops">Foreach</a></h3>
 			<article>
 				<h4>Arrays</h4>
 				<pre class="code" name="code">
@@ -46,13 +46,13 @@
 					</code>
 				</pre>
 			</article>
-			<h3><a href="http://riotjs.com/guide/#nested-html">Yield</a></h3>
+			<h3><a href="{rioturl}guide/#nested-html">Yield</a></h3>
 			<pre class="code">
 				<code>
 					&lt;yield/&gt;
 				</code>
 			</pre>
-			<h3><a href="http://riotjs.com/guide/#conditionals">Conditions</a></h3>
+			<h3><a href="{rioturl}guide/#conditionals">Conditions</a></h3>
 			<article>
 				<h4>Block Element</h4>
 				<pre class="code"><code>
@@ -62,6 +62,11 @@
 				<h4>Inline</h4>
 				<pre class="code"><code>
 					&lt;div class=\{ active : condition\}&gt;&lt;/div&gt;
+				</code></pre>
+				<h4>Ternary</h4>
+				<small>This is a JS expression, you need quotes for strings</small>
+				<pre class="code"><code>
+					&lt;div class=\{ condition ? 'enabled' : 'disabled'\}&gt;&lt;/div&gt;
 				</code></pre>
 			</article>
 		</section>
@@ -75,18 +80,18 @@
 					<div>
 						<h4>TRIGGER EVENTS</h4>
 						<div>
-							<div><a href="http://riotjs.com/api/#tag-update">update()</a></div>
-							<div><a href="http://riotjs.com/api/#mount">mount()</a></div>
-							<div><a href="http://riotjs.com/api/#tag-unmount">unmount()</a></div>
+							<div><a href="{rioturl}api/#tag-update">update()</a></div>
+							<div><a href="{rioturl}api/#mount">mount()</a></div>
+							<div><a href="{rioturl}api/#tag-unmount">unmount()</a></div>
 						</div>
 					</div>
 					<div>
 						<h4>TRIGGER METHODS</h4>
 						<div>
-							<div><a href="http://riotjs.com/api/observable/#trigger">trigger()</a></div>
-							<div><a href="http://riotjs.com/api/observable/#on">on()</a></div>
-							<div><a href="http://riotjs.com/api/observable/#one">one()</a></div>
-							<div><a href="http://riotjs.com/api/observable/#off">off()</a></div>
+							<div><a href="{rioturl}api/observable/#trigger">trigger()</a></div>
+							<div><a href="{rioturl}api/observable/#on">on()</a></div>
+							<div><a href="{rioturl}api/observable/#one">one()</a></div>
+							<div><a href="{rioturl}api/observable/#off">off()</a></div>
 						</div>
 					</div>
 					
@@ -101,11 +106,11 @@
 		</section>
 
 		<section>
-			<h2><a href="http://riotjs.com/api/observable/">Triggers - Observable</a></h2>
+			<h2><a href="{rioturl}api/observable/">Triggers - Observable</a></h2>
 			<span>The Riot event system</span>
 			<article>
 				<h3>Events</h3>
-					this.update() is same as this.trigger('update')
+					<p>this.update() is same as this.trigger('update')</p>
 
 					<div>update()</div>
 					<div>updated()</div>
@@ -114,10 +119,10 @@
 					
 
 				<h3>Trigger</h3>
-					<div><a href="http://riotjs.com/api/observable/#trigger">trigger('event') - trigger event</a></div>
-					<div><a href="http://riotjs.com/api/observable/#on">on('event', function()\{\}) - react on event trigger</a></div>
-					<div><a href="http://riotjs.com/api/observable/#one">one('event', function()\{\}) - only once</a></div>
-					<div><a href="http://riotjs.com/api/observable/#off">off() - don't listen to event anymore</a></div>
+					<div><a href="{rioturl}api/observable/#trigger">trigger('event') - trigger event</a></div>
+					<div><a href="{rioturl}api/observable/#on">on('event', function()\{\}) - react on event trigger</a></div>
+					<div><a href="{rioturl}api/observable/#one">one('event', function()\{\}) - only once</a></div>
+					<div><a href="{rioturl}api/observable/#off">off() - don't listen to event anymore</a></div>
 			</article>
 		</section>
 
@@ -126,8 +131,8 @@
 			<span></span>
 			<article>
 				<h3>Methods</h3>
-					<div><a href="http://riotjs.com/guide/compiler/">compile()</a></div>
-					<div><a href="http://riotjs.com/guide/#mixins">mixin()</a></div>
+					<div><a href="{rioturl}guide/compiler/">compile()</a></div>
+					<div><a href="{rioturl}guide/#mixins">mixin()</a></div>
 					<div>mount()</div>
 					<div>mountTo()</div>
 					<div>observable()</div>
@@ -143,34 +148,34 @@
 		</section>
 
 		<section>
-			<h2><a href="http://riotjs.com/api/router/">Router</a></h2>
+			<h2><a href="{rioturl}api/router/">Router</a></h2>
 			<span>Listening to and changing the url hash <small>(#customer/edit/3)</small></span>
 			<article>
 
-				<div><a href="http://riotjs.com/api/router/#route">riot.route.route(args, function)</a></div>
+				<div><a href="{rioturl}api/router/#route">riot.route.route(args, function)</a></div>
 
-				<div><a href="http://riotjs.com/api/router/#route-to">riot.route.route('customer/list')</a></div>
+				<div><a href="{rioturl}api/router/#route-to">riot.route.route('customer/list')</a></div>
 
-				<div><a href="http://riotjs.com/api/router/#route-start">riot.route.start()</a></div>
+				<div><a href="{rioturl}api/router/#route-start">riot.route.start()</a></div>
 
-				<div><a href="http://riotjs.com/api/router/#route-stop">riot.route.stop()</a></div>
+				<div><a href="{rioturl}api/router/#route-stop">riot.route.stop()</a></div>
 
-				<div><a href="http://riotjs.com/api/router/#route-exec">riot.route.exec()</a></div>
+				<div><a href="{rioturl}api/router/#route-exec">riot.route.exec()</a></div>
 
-				<div><a href="http://riotjs.com/api/router/#route-parser">riot.route.parser()</a></div>
+				<div><a href="{rioturl}api/router/#route-parser">riot.route.parser()</a></div>
 
 			</article>
 		</section>
 
 		<section>
-			<h2><a href="http://riotjs.com/guide/#mixins">Mixin</a></h2>
+			<h2><a href="{rioturl}guide/#mixins">Mixin</a></h2>
 			<span>Reusable functions</span>
 			<article>
 				<h3>Defining Mixins</h3>
 				<pre><code>
 					var object = \{ init : function()\{\} \}
 				</code></pre>
-				<h3><a href="http://riotjs.com/guide/#sharing-mixin">load mixin under namespace</a></h3>
+				<h3><a href="{rioturl}guide/#sharing-mixin">load mixin under namespace</a></h3>
 				<pre><code>
 					riot.mixin('name', object)
 				</code></pre>
@@ -211,6 +216,9 @@
 		author  : 'MartinMuzatko',
 		authorLink : ''
 	}
+
+	// Don't forget the trailing slash
+	this.rioturl = 'http://riotjs.com/'
 
 	this.events = 
 	{
