@@ -10,7 +10,7 @@
 		</div>
 		<div flex="40" class="written-by">
 			<p>Written with &lt;3 by <a href="https://github.com/{cheatsheet.author}">@{cheatsheet.author}</a></p>
-			<p><small>Part of <a href="happy-css.com">happy-css.com</a></small></p>
+			<p><small>Part of <a href="http://happy-css.com">happy-css.com</a></small></p>
 		</div>
 	</header>
 	<main layout="column" layout-wrap>
