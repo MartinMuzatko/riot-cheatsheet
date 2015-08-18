@@ -234,7 +234,7 @@
 			'onmousemove',
 			'onmouseover',
 			'onmouseout',
-			'onmoseup',
+			'onmouseup',
 		],
 		'Keyboard' :
 		[
