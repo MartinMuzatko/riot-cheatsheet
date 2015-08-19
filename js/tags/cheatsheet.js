@@ -11,6 +11,7 @@
 		<div flex="40" class="written-by">
 			<p>Written with <span style="color: white">&#9829;</span> by <a href="https://github.com/{cheatsheet.author}">@{cheatsheet.author}</a></p>
 			<p><small>Part of <a href="http://happy-css.com">happy-css.com</a></small></p>
+			<p><small>Love this cheatsheet?</small> <iframe src="https://ghbtns.com/github-btn.html?user=MartinMuzatko&repo=riot-cheatsheet&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></p>
 		</div>
 	</header>
 
