@@ -217,9 +217,10 @@
 
 	<div>
 		<section class="globalEvents">
-			<h2>Global Events</h2>
+			<h2><a href="http://riotjs.com/guide/#event-handlers">Global Events</a></h2>
 			<a href="http://devdocs.io/dom/globaleventhandlers">All GlobalEventHandlers</a>
-			<p>Events are prevented by default! you can avoid that by returning true at the end of your event function (<code>return true</code>)</p>
+			<p>The default event handler behavior is automatically cancelled unless the element is a checkbox or radio button. <br> This means that <code>e.preventDefault()</code> is already called for you, because this is what you usually want. <br>
+			you can avoid that by returning true at the end of your event function (return true) <code>return true</code>)</p>
 			<div>
 				<b>Usage:</b>
 				<pre class="code"><code>
