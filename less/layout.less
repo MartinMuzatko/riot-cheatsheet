@@ -13,10 +13,13 @@
 
 .written-by
 {
-	display: none;
-	@media all and (min-width: 35rem)
+	> *
 	{
-		display: block;
+		display: none;
+		@media all and (min-width: 35rem)
+		{
+			display: block;
+		}
 	}
 }
 
@@ -30,6 +33,19 @@ footer
 
 cheatsheet
 {
+	dl
+	{
+		dt
+		{
+			float: left;
+			clear: left;
+			width: 11em;
+		}
+		dd
+		{
+			float: left;
+		}
+	}
 
 	background: darken(@colorFillLight, 5%);
 
