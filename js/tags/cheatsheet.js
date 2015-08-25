@@ -134,9 +134,10 @@
 
 			<section>
 				<h2><a href="{rioturl}api/observable/">Triggers - Observable</a></h2>
-				<span>The Riot event system</span>
+				<p>The Riot event system</p>
+				<p>Observable events are tagbased (e.g.: <code>this.tags['sub-tag']on('addItem', function()\{\})</code>)</p>
 				<article>
-					<h3>Events</h3>
+					<h3><a href="{rioturl}api/#events">Events</a></h3>
 						<p>this.update() is same as this.trigger('update')</p>
 
 						<div>update()</div>
@@ -155,7 +156,7 @@
 
 			<section>
 				<h2>Riot Object</h2>
-				<span></span>
+				<p>Accessible via <code>riot</code></p>
 				<article>
 					<h3>Methods</h3>
 						<div><a href="{rioturl}guide/compiler/">compile()</a></div>
