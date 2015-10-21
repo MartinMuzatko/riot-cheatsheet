@@ -22,7 +22,7 @@ h1, h2, h3
 	margin: 0;
 	padding: .5em 0;
 	font-family: @fontTitle;
-	a
+	a:not(.anchor)
 	{
 		position: relative;
 		&:before, &:after
@@ -49,6 +49,18 @@ h1, h2, h3
 				5px 0 0 0  @colorMain,
 				6px 0 0 0  @colorMain,
 			;
+		}
+	}
+	a.anchor
+	{
+		font-size: .8em;
+		visibility: hidden;
+	}
+	&:hover
+	{
+		a.anchor
+		{
+			visibility: visible;
 		}
 	}
 }

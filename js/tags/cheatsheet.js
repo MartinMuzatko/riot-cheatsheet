@@ -20,7 +20,7 @@
 			<section>
 				<h2>HTML CONSTRUCTS</h2>
 
-				<h3><a href="{rioturl}guide/#named_elements">Accessing Elements</a></h3>
+				<h3 id="accessing-elements"><a class="anchor" href="#accessing-elements">#</a><a href="{rioturl}guide/#named_elements">Accessing Elements</a></h3>
 				<article>
 					<h4>HTML Elements</h4>
 					<span>You can also use <code>id</code> if you are more comfortable with that</span>
@@ -43,7 +43,7 @@
 					</pre>
 				</article>
 
-				<h3><a href="{rioturl}guide/#loops">Foreach</a></h3>
+				<h3 id="foreach"><a class="anchor" href="#foreach">#</a><a href="{rioturl}guide/#loops">Foreach</a></h3>
 				<article>
 					<h4>Arrays</h4>
 					<pre class="code" name="code">
@@ -72,14 +72,14 @@
 						</code>
 					</pre>
 				</article>
-				<h3><a href="{rioturl}guide/#nested-html">Yield</a></h3>
+				<h3 id="yield"><a class="anchor" href="#yield">#</a><a href="{rioturl}guide/#nested-html">Yield</a></h3>
 				<p>HTML writtin inside custom tags you call, can be retrieved via the yield tag</p>
 				<pre class="code">
 					<code>
 						&lt;yield/&gt;
 					</code>
 				</pre>
-				<h3><a href="{rioturl}guide/#conditionals">Conditions</a></h3>
+				<h3 id="conditions"><a class="anchor" href="#conditions">#</a><a href="{rioturl}guide/#conditionals">Conditions</a></h3>
 				<article>
 					<h4>Block Element</h4>
 					<pre class="code"><code>
@@ -99,7 +99,7 @@
 			</section>
 
 			<section>
-				<h2>Tag Object</h2>
+				<h2 id="tag-object"><a class="anchor" href="#tag-object">#</a>Tag Object</h2>
 				<span>Retrievable within Tag Scope <small>(this)</small></span>
 				<article>
 					<h3>Methods</h3>
@@ -133,11 +133,11 @@
 			</section>
 
 			<section>
-				<h2><a href="{rioturl}api/observable/">Triggers - Observable</a></h2>
+				<h2 id="observable"><a class="anchor" href="#observable">#</a><a href="{rioturl}api/observable/">Triggers - Observable</a></h2>
 				<p>The Riot event system</p>
 				<p>Observable events are tagbased (e.g.: <code>this.tags['sub-tag']on('addItem', function()\{\})</code>)</p>
 				<article>
-					<h3><a href="{rioturl}api/#events">Events</a></h3>
+					<h3 id="events"><a class="anchor" href="#events">#</a><a href="{rioturl}api/#events">Events</a></h3>
 						<p>this.update() is same as this.trigger('update')</p>
 
 						<div>update()</div>
@@ -155,7 +155,7 @@
 			</section>
 
 			<section>
-				<h2>Riot Object</h2>
+				<h2 id="riot-object"><a class="anchor" href="#riot-object">#</a>Riot Object</h2>
 				<p>Accessible via <code>riot</code></p>
 				<article>
 					<h3>Methods</h3>
@@ -176,7 +176,7 @@
 			</section>
 
 			<section>
-				<h2><a href="{rioturl}api/router/">Router</a></h2>
+				<h2 id="router"><a class="anchor" href="#router">#</a><a href="{rioturl}api/router/">Router</a></h2>
 				<span>Listening to and changing the url hash <small>(#customer/edit/3)</small></span>
 				<article>
 
@@ -196,7 +196,7 @@
 			</section>
 
 			<section>
-				<h2><a href="{rioturl}guide/#mixins">Mixin</a></h2>
+				<h2 id="mixin"><a class="anchor" href="#mixin">#</a><a href="{rioturl}guide/#mixins">Mixin</a></h2>
 				<span>Reusable functions</span>
 				<article>
 					<h3>Defining Mixins</h3>
@@ -219,7 +219,7 @@
 
 	<div>
 		<section class="globalEvents">
-			<h2><a href="http://riotjs.com/guide/#event-handlers">Global Events</a></h2>
+			<h2 id="global-events"><a class="anchor" href="#global-events">#</a><a href="http://riotjs.com/guide/#event-handlers">Global Events</a></h2>
 			<a href="http://devdocs.io/dom/globaleventhandlers">All GlobalEventHandlers</a>
 			<p>The default event handler behavior is automatically cancelled unless the element is a checkbox or radio button. <br> This means that <code>e.preventDefault()</code> is already called for you, because this is what you usually want. <br>
 			you can avoid that by returning true at the end of your event function (return true) <code>return true</code>)</p>
@@ -376,12 +376,6 @@
 			console.log(x);
 		}
 	)
-
-
-
-
-
-
 
 	</script>
 
