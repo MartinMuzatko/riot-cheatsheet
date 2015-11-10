@@ -140,10 +140,10 @@
 					<h3 id="events"><a class="anchor" href="#events">#</a><a href="{rioturl}api/#events">Events</a></h3>
 						<p>this.update() is same as this.trigger('update')</p>
 
-						<div>update()</div>
-						<div>updated()</div>
-						<div>mount()</div>
-						<div>unmount()</div>
+						<div>update</div>
+						<div>updated</div>
+						<div>mount</div>
+						<div>unmount</div>
 						
 
 					<h3>Trigger</h3>
@@ -250,7 +250,7 @@
 
 	this.cheatsheet =
 	{
-		version : 'First Draft',
+		version : '2.2.4',
 		author  : 'MartinMuzatko',
 		authorLink : ''
 	}
