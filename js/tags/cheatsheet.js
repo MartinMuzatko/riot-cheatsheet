@@ -25,7 +25,7 @@
 					<h4>HTML Elements</h4>
 					<span>You can also use <code>id</code> if you are more comfortable with that</span>
 					<pre class="code" name="code">
-						<code>	
+						<code>
 							&lt;input name="username"/&gt;
 							&lt;script&gt;
 								this.username.value = 'admin'
@@ -34,7 +34,7 @@
 					</pre>
 					<h4>Riot Sub Tags</h4>
 					<pre class="code" name="code">
-						<code>	
+						<code>
 							&lt;my-sub-tag name="subtag"&gt;&lt;/my-sub-tag&gt;
 							&lt;script&gt;
 								this.tags.subtag
@@ -47,7 +47,7 @@
 				<article>
 					<h4>Arrays</h4>
 					<pre class="code" name="code">
-						<code>	
+						<code>
 							&lt;div each=\{item, index in items\}&gt;
 								\{index\} - \{item\}
 							&lt;/div&gt;
@@ -63,7 +63,7 @@
 								\{key\} - \{value\}
 							&lt;/div&gt;
 							&lt;script&gt;
-								this.items = 
+								this.items =
 								\{
 									file: 'riot.png',
 									path: 'images/'
@@ -85,7 +85,7 @@
 					<pre class="code"><code>
 						&lt;div if=\{ condition \}&gt;&lt;/div&gt;
 					</code></pre>
-						
+
 					<h4>Inline</h4>
 					<pre class="code"><code>
 						&lt;div class=\{ active : condition\}&gt;&lt;/div&gt;
@@ -121,7 +121,7 @@
 								<div><a href="{rioturl}api/observable/#off">off()</a></div>
 							</div>
 						</div>
-						
+
 
 					<h3>Properties</h3>
 						<div>isMounted</div>
@@ -144,13 +144,13 @@
 						<div>updated</div>
 						<div>mount</div>
 						<div>unmount</div>
-						
+
 
 					<h3>Trigger</h3>
 						<div><a href="{rioturl}api/observable/#trigger">trigger('event') - trigger event</a></div>
 						<div><a href="{rioturl}api/observable/#on">on('event', function()\{\}) - react on event trigger</a></div>
 						<div><a href="{rioturl}api/observable/#one">one('event', function()\{\}) - only once</a></div>
-						<div><a href="{rioturl}api/observable/#off">off() - don't listen to event anymore</a></div>
+						<div><a href="{rioturl}api/observable/#off">off() - don&apos;t listen to event anymore</a></div>
 				</article>
 			</section>
 
@@ -167,7 +167,7 @@
 						<div>route()</div>
 						<div>tag()</div>
 						<div>update()</div>
-						
+
 
 					<h3>Properties</h3>
 						<div>parsers</div>
@@ -210,7 +210,7 @@
 					<h3>Using mixin within tag</h3>
 					<pre><code>
 						this.mixin('name')
-					</code></pre>		
+					</code></pre>
 				</article>
 			</section>
 
@@ -227,9 +227,9 @@
 				<b>Usage:</b>
 				<pre class="code"><code>
 					&lt;div onclick=\{ method \}&gt;&lt;/div&gt;
-				</code></pre> 
+				</code></pre>
 			</div>
-				
+
 			</a>
 			<article layout="column" layout-wrap>
 				<div each={section, sections in events}>
@@ -243,7 +243,7 @@
 	</div>
 
 	<footer>
-		<p class="disclaimer">This is a privately maintained inofficial cheatsheet, but you are welcome to <a href="https://github.com/MartinMuzatko/riot-cheatsheet/tree/gh-pages">contribute</a>!</p>
+		<p class="disclaimer">This is a privately maintained unofficial cheatsheet, but you are welcome to <a href="https://github.com/MartinMuzatko/riot-cheatsheet/tree/gh-pages">contribute</a>!</p>
 	</footer>
 
 	<script>
@@ -258,7 +258,7 @@
 	// Don't forget the trailing slash
 	this.rioturl = 'http://riotjs.com/'
 
-	this.events = 
+	this.events =
 	{
 
 		'Mouse' :
@@ -369,7 +369,7 @@
 
 
 	this.on(
-		'update', 
+		'update',
 		function()
 		{
 			var x = this.code.innerHTML
