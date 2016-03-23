@@ -96,10 +96,12 @@
 				<h3>Events</h3>
 					this.update() is same as this.trigger('update')
 
-					<div>update()</div>
-					<div>updated()</div>
-					<div>mount()</div>
-					<div>unmount()</div>
+					<div>before-mount</div>
+					<div>mount</div>
+					<div>update</div>
+					<div>updated</div>
+					<div>before-unmount</div>
+					<div>unmount</div>
 					
 
 				<h3>Trigger</h3>
@@ -132,7 +134,7 @@
 		</section>
 
 		<section>
-			<h2>Router</h2>
+			<h2>Router <small>(2.2.x)</small></h2>
 			<span>Listening to and changing the url hash <small>(#customer/edit/3)</small></span>
 			<article>
 
