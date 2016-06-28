@@ -109,8 +109,19 @@ riot.mount('todo-list', items)
 
 Yielding is like [options](#options), just that it accepts HTML and other riot tags.
 
+Definition
 ```html
 <popup-body>
-    Hi! I'm supporting <abbr title="Hypertext Markup Language">HTML</abbr>
+    <yield>
 </popup-body>
 ```
+
+Usage
+```html
+<popup-body>
+    Hi! I'm supporting
+    <abbr title="Hypertext Markup Language">HTML</abbr>
+</popup-body>
+```
+
+### Multi Yieldpoints
