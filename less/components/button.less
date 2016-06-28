@@ -1,0 +1,62 @@
+/* ========================================
+BUTTON COMPONENT
+* Defines a full-width colorful container
+*
+* @size: small|medium|large|custom(e.g.:5%)
+* @indent: small|medium|large|custom(e.g.:5%)
+* @color: color
+======================================== */
+
+.button(@color: @color-primary, @type: outline) {
+    display: inline-block;
+    user-select: none;
+    width: auto;
+    margin-top: 1em;
+    border-radius: .1em;
+    font-size: 1em;
+    cursor: pointer;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: all @duration-action ease;
+    font-family: @font-body;
+    & when (@type = outline) {
+        background-color: transparent;
+        color: @color-light;
+        border: 1px solid @color-light;
+        &:hover {
+            background-color: @color-light;
+            color: @color;
+        }
+    }
+    & when (@type = outline-reverse) {
+        background-color: transparent;
+        color: @color;
+        border: 1px solid @color;
+        &:hover {
+            color: @color-light;
+            background-color: @color;
+        }
+    }
+    & when (@type = full) {
+        background-color: @color;
+        color: contrast(@color, @color-dark, @color-light);
+
+        &:hover {
+            box-sizing: border-box;
+            @color-hover: lighten(@color, 10%);
+            animation-name: lsd-background;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            color: contrast(@color-hover, @color-dark, @color-light);
+        }
+    }
+}
+
+.button {
+    &.outline {
+        .button(@color-primary, @type: outline);
+    }
+    &.reverse {
+        .button(@color-primary, @type: outline-reverse);
+    }
+}

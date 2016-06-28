@@ -1,0 +1,97 @@
+/* ========================================
+STRIPE COMPONENT
+* Defines a full-width colorful container
+*
+* @padding: small|medium|large|custom(e.g.:5%)
+* @width: small|medium|large|custom(e.g.:300)
+* this value is substracted from the current breakpoint
+* @color: color
+======================================== */
+
+.stripe(@padding: medium, @width: 10*16, @color: inherit) {
+    padding: @indent-large 0;
+    width: 100%;
+    & when not(@color = inherit) {
+        background-color: @color;
+    }
+    & when (iscolor(@color)) {
+        color: contrast(@color, @color-dark, @color-light);
+    }
+
+    & when (isnumber(@padding)) {
+        .padding-vertical(@padding);
+    }
+    & when (@padding = small) {
+        .padding-vertical(@indent-medium);
+    }
+    & when (@padding = medium) {
+        .padding-vertical(@indent-large);
+    }
+    & when (@padding = large) {
+        .padding-vertical(@indent-larger);
+    }
+    // width
+    & when
+        (@width = small),
+        (@width = medium),
+        (@width = large),
+        (isnumber(@width)) {
+        // width
+        > * {
+            margin-left: auto;
+            margin-right: auto;
+            //width: 60em;
+            @media screen and (max-width: @breakpoint-sm) {
+                .padding-horizontal(5%);
+            }
+        }
+    }
+
+    // Breakpoint - @var
+    & when (@width = small) {
+        > * {
+            .responsiveWidth(@width-small);
+        }
+    }
+    & when (@width = medium) {
+        > * {
+            .responsiveWidth(@width-medium);
+        }
+    }
+    & when (@width = large) {
+        > * {
+            .responsiveWidth(@width-large);
+        }
+    }
+    & when (isnumber(@width)) {
+        > * {
+            .responsiveWidth(@width);
+        }
+    }
+}
+
+.striped(@size: @indent-larger, @color-odd: darken(@color-light, 5%), @color-even: @color-light) {
+    > *:nth-child(2n+1) {
+        .stripe(@size, @indent-primary, @color-odd);
+    }
+    > *:nth-child(2n) {
+        .stripe(@size, @indent-primary, @color-even);
+    }
+}
+
+.stripe.fluid {
+    padding: 0;
+    > * {
+        width: 100%;
+    }
+}
+
+
+.stripe {
+    &.medium {
+        .stripe(large, medium, inherit)
+    }
+    &.small {
+        .stripe(large, small, inherit)
+    }
+}

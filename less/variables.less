@@ -1,42 +1,70 @@
-/* VARIABLES */
+/*  ========================================
+    COLORS
+    ======================================== */
 
-	/* COLORS */
-	@colorMain: hsl(0, 50%, 50%);
-	@colorSecondary: hsl(80, 60%, 60%);
+@color-primary: hsl(344, 100%, 50%);
 
-	@colorShadow: rgba(0, 0, 0, 0.5);
-	@colorLight: lighten(@colorShadow, 100%);
-	@colorFillDark: #1F1F1F;
-	@colorFillLight: #F2F2F2;
+@color-dark: hsl(344, 10%, 20%);
+@color-light: hsl(344, 10%, 95%);
+@color-dark-shadow: fadeout(@color-dark, 50%);
+@color-dark-shadow-faded: fadeout(@color-dark-shadow, 40%);
+@color-light-shadow: fadeout(@color-light, 50%);
 
-	@colorBackground: @colorFillLight;
+/*  ========================================
+    FONTS
+    ======================================== */
 
-	/* BACKGROUND */
+@font-code: 'Cousine', monospace;
+@font-body: 'Marvel', verdana;
+@font-heading: 'Marvel', sans-serif;
+@font-replacement: sans serif;
 
-	/* RADI TOOLS*/
+/*  ========================================
+    BREAKPOINTS
+    ======================================== */
 
-	@bevelLeftLower: 45deg;
-	@bevelLeftUpper: 135deg;
-	@bevelRightUpper: 225deg;
-	@bevelRightLower: 305deg;
+@breakpoint-sm: 600px;
+@breakpoint-md: 960px;
+@breakpoint-lg: 1200px;
 
-	/* FONTS */
+// ALIAS
+@breakpoint-mobile-nav : @breakpoint-md;
 
-	@fontMain:		Asap;
-	@fontTitle:		Oswald;
-	@fontCaption:	Merriweather;
-	@fontMainSize: 100%;
+/*  ========================================
+    Z-INDEXES
+    ======================================== */
 
-	/* GRID */
+@z-index-overlay: 200;
+@z-index-blanket: 300;
+@z-index-header: 400;
+@z-index-modal: 500;
+@z-index-popup: 600;
 
-	@cols: 3;
-	@col-gutter: 1em;
+/*  ========================================
+    DURATIONS
+    ======================================== */
 
-	/* PADDING */
-	@paddingContent: 10%;
+@duration-hover: .1s;
+@duration-action: .33s;
+@duration-collapse: .5s;
+@duration-animation: 1s;
 
-	@navLineHeight: 4;
-	@navOffset: 1em;
+/*  ========================================
+    INDENTATIONS
+    ======================================== */
 
-	/* BOX-SHADOW BORDER */
-	@border: .3em;
+@indent-outer: 6em;
+@indent-larger: 4em;
+@indent-large: 2em;
+@indent-medium: 1em;
+@indent-small: .25em;
+
+@width-small: 40*16;
+@width-medium: 20*16;
+@width-large: 10*16;
+
+/*  ========================================
+    INDENTATIONS
+    ======================================== */
+
+@border-width: @indent-small;
