@@ -15,11 +15,11 @@ BASE
 }
 
 ::-webkit-scrollbar-thumb {
-  background: @color-light-shadow;
+  background: @color-dark-shadow;
 }
 
 ::-webkit-scrollbar-track {
-  background: @color-dark-shadow;
+  background: @color-light-shadow;
 }
 
 /*  ========================================
@@ -32,6 +32,7 @@ code, pre {
 
 body, html
 {
+    scroll-behavior: smooth;
     background-color: @color-light;
     min-width: 320px;
     font-family: @font-body;
@@ -41,6 +42,11 @@ body, html
     color: @color-dark;
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+app {
     height: 100%;
     width: 100%;
 }
@@ -90,6 +96,7 @@ h1, h2, h3, h4, h5, h6
 h1 {
     font-size: 2.5em;
     margin: 0;
+    text-transform: uppercase;
 }
 
 h2 {

@@ -1,26 +1,95 @@
-nav {
-	a {
-		color: @color-light;
-		padding: 1em;
-		&:hover {
-			background: @color-light;
-		}
+* {
+	box-sizing: border-box;
+}
+
+@navigation-indent: 10em;
+
+.logo {
+	img {
+		border: 1px solid @color-light;
+		border-radius: 2px;
+	}
+	span {
+		padding-left: .5em;
 	}
 }
 
 header {
-	.stripe(medium, large, @color-primary);
+	@media screen and (max-width: @breakpoint-sm) {
+		.stripe(large, medium);
+		text-align: center;
+	}
+	@media screen and (min-width: @breakpoint-sm) {
+		position: fixed;
+		width: @navigation-indent;
+		left: 0;
+		top: 0;
+		height: 100%;
+		box-shadow: inset -.125em 0 @color-dark-shadow;
+	}
+	background: @color-primary;
 	color: @color-light;
-	border-bottom: .25em solid @color-dark-shadow;
+	padding: @indent-large 0;
+	p {
+		padding: 1em;
+	}
+	nav a {
+        display: block;
+		color: @color-light;
+		padding: 1em;
+		text-transform: uppercase;
+		&:hover, &:focus, &.active {
+			background: @color-light;
+			color: @color-primary;
+			box-shadow: inset -.125em 0 @color-primary;
+		}
+	}
+}
+
+.top {
+	@media screen and (min-width: @breakpoint-sm) {
+		display: none;
+	}
+	transition: all @duration-animation ease;
+	opacity: 0;
+	&.active {
+		opacity: 1;
+	}
+	border-radius: 100%;
+	position: fixed;
+	background: @color-dark-shadow;
+	color: @color-light;
+	font-size: 5em;
+	left: calc(~'50% - .5em');
+	bottom: -.5em;
+	padding-top: .4em;
+	height: 1em;
+	width: 1em;
+	z-index: @z-index-overlay;
+	text-align: center;
+	vertical-align: bottom;
+	box-shadow: 0 0 .1em @color-light-shadow;
+}
+
+.container(@color) {
+	.stripe(large, 30*16, @color);
+	@media screen and (min-width: @breakpoint-sm) {
+		width: calc(~'100% - @{navigation-indent}');
+		margin-left: @navigation-indent;
+	}
 }
 
 main {
-	.stripe(large, large, @color-light);
+	.container(@color-light);
 }
 
 footer {
-	.stripe(medium, large, @color-dark);
+	.container(@color-dark);
 	color: @color-light;
+}
+
+article {
+    padding: .5em;
 }
 
 
@@ -28,4 +97,12 @@ footer {
 	position: absolute;
 	top: 0;
 	right: 0;
+}
+
+code[class*=language] {
+    padding: 0 .5em;
+}
+
+pre[class*=language] {
+    border-left-width: 0;
 }
