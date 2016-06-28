@@ -1,0 +1,8 @@
+<markdown>
+    <div name="content"></div>
+    <script>
+        this.on('mount', () => {
+            this.content.outerHTML = require(`../../docs/${opts.file}.md`)
+        })
+    </script>
+</markdown>
