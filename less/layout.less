@@ -14,6 +14,32 @@
 	}
 }
 
+menu {
+	position: fixed;
+	margin: 0;
+	margin-left: @navigation-indent;
+	padding: 0;
+	background: @color-dark-shadow;
+	z-index: @z-index-overlay;
+	transition: all @duration-hover ease;
+	overflow-y: auto;
+	max-height: 100%;
+	a {
+		font-size: .8em;
+		&:hover {
+			color: @color-primary;
+			background: @color-light;
+		}
+		color: @color-light;
+		display: block;
+		padding: .25em .5em;
+	}
+	input {
+		width: 100%;
+		padding: .25em .5em;
+	}
+}
+
 header {
 	@media screen and (max-width: @breakpoint-sm) {
 		.stripe(large, medium);
@@ -27,18 +53,27 @@ header {
 		height: 100%;
 		box-shadow: inset -.125em 0 @color-dark-shadow;
 	}
+	p {
+		color: @color-dark;
+		background: @color-light;
+		box-shadow: inset -.125em 0 @color-dark-shadow;
+
+	}
 	background: @color-primary;
 	color: @color-light;
 	padding: @indent-large 0;
 	p {
 		padding: 1em;
 	}
+	nav {
+		padding-top: 1em;
+	}
 	nav a {
         display: block;
 		color: @color-light;
 		padding: 1em;
 		text-transform: uppercase;
-		&:hover, &:focus, &.active {
+		&:hover, &.active {
 			background: @color-light;
 			color: @color-primary;
 			box-shadow: inset -.125em 0 @color-primary;
