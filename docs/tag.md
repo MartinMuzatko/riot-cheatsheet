@@ -58,3 +58,46 @@ this.on('*', (eventType) => {
     console.log(eventType)
 })
 ```
+
+## Tag Methods & Properties
+
+### Update
+
+Shortcut for `this.trigger('update')`
+
+```js
+this.update()
+```
+
+### isMounted
+
+Attribute to tell whether or not the tag is mounted
+
+```js
+this.isMounted
+```
+
+### root
+
+Points to it's own tag element
+
+```js
+this.root // reference to riot tag
+```
+
+### mixin
+
+See [Mixins](#mixins)
+
+
+### tags
+
+See [Child tags](#child-tags)
+
+### parent
+
+Access the parent tag, if there is one
+
+```js
+this.parent // <Tag>
+```

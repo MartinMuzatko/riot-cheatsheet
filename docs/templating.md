@@ -2,11 +2,13 @@
 
 ## Expressions
 
+### Pure Javscript
+
 Can contain any javascript except curly brackets
 
 ```html
 Random number: {Math.random() * 10}
-PI is {Math.PI}
+&copy; <time datetime={new Date().getFullYear()}></time>
 How long is a day in seconds? {60*60*24}
 ```
 
@@ -16,12 +18,50 @@ How long is a day in seconds? {60*60*24}
 My name is {author.name}
 and I'm {author.age} {unit}s old
 <script>
-    this.author = {
-        name: 'Martin',
-        age: 25
-    }
-    this.unit = 'year'
+this.author = {
+    name: 'Martin',
+    age: 25
+}
+this.unit = 'year'
 </script>
+```
+
+## Conditionals
+
+### Shorthand ternary
+
+```html
+<div class={active: item.active}></div>
+```
+
+### Ternary
+
+```html
+<div class={item.active ?: 'active' : ''}></div>
+```
+
+### Blocklevel
+
+Does not write HTML if condition is false
+
+```html
+<div if={shop.items.length}></div>
+```
+
+### Hide
+
+Writes HTML, just sets `display` style to `none` if condition is true
+
+```html
+<nav hide={mobile}></nav>
+```
+
+### Show
+
+Opposite of Hide `display`
+
+```html
+<nav show={mobile}></nav>
 ```
 
 ## Access elements and tags
