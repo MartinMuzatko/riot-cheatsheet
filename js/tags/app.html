@@ -141,12 +141,20 @@
                     }
                 }
             })
-            // new Waypoint({
-            //     element: document.querySelector('h1'),
-            //     handler: (event) => {
-            //
-            //     }
-            // })
+            // ScrollSpy Alternative
+            for (var doc in this.docs) {
+                doc = this.docs[doc]
+                new Waypoint({
+                    element: this['cheatsheet-'+doc],
+                    riot: this,
+                    doc: doc,
+                    handler: function() {
+                        this.options.riot.name = this.options.doc
+                        this.options.riot.update()
+                    }
+                })
+            }
+
             this.tags.markdown[this.tags.markdown.length-1].on('mount', () => {
                 this.shortcuts = []
                 var shortcuts = document.querySelectorAll('h1,h2,h3')
