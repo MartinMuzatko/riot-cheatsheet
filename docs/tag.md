@@ -63,7 +63,7 @@ this.on('*', (eventType) => {
 
 ### Update
 
-Shortcut for `this.trigger('update')`
+Shortcut for [trigger](#trigger) `this.trigger('update')`
 
 ```js
 this.update()
@@ -84,6 +84,10 @@ Points to it's own tag element
 ```js
 this.root // reference to riot tag
 ```
+
+### opts
+
+Options passed via HTML or on mount, See [options](#options)
 
 ### mixin
 

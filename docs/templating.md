@@ -106,8 +106,6 @@ Options can be passed via html params or on mount
 
 Options only accept `boolean`, `number`, `string` or simple `array`, when passing directly
 
-Options are
-
 ### Passing values per HTML
 
 ```html
