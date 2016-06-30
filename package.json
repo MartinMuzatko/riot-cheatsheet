@@ -1,0 +1,52 @@
+{
+  "name": "riot-cheatsheet",
+  "version": "1.0.0",
+  "description": "Riot at a glance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinMuzatko/riot-cheatsheet.git"
+  },
+  "author": "Martin Muzatko <martin@happy-css.com> (http://happy-css.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MartinMuzatko/riot-cheatsheet/issues"
+  },
+  "homepage": "https://github.com/MartinMuzatko/riot-cheatsheet#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-riot": "^1.1.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.13.1",
+    "eslint-loader": "^1.3.0",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "markdown-loader": "^0.1.7",
+    "marked": "^0.3.5",
+    "postcss": "^5.0.21",
+    "postcss-loader": "^0.9.1",
+    "prismjs": "^1.5.1",
+    "riot": "^2.4.1",
+    "riot-loader": "^1.0.0",
+    "riotjs-loader": "^3.0.0",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "normalize.css": "^4.1.1",
+    "waypoints": "^4.0.0",
+    "zenscroll": "^3.1.0"
+  }
+}

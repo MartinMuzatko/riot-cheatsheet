@@ -1,0 +1,22 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": false
+        }
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "semi": [2, "never"],
+        "no-unreachable": 2,
+        "no-console": 0,
+        "no-debugger": 0,
+        "no-unused-vars": 0
+
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+    }
+}

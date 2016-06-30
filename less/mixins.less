@@ -1,0 +1,32 @@
+/* ========================================
+MIXINS
+* General Use Mixins to ease up reoccuring styles
+* No Components!
+======================================== */
+
+
+.padding-vertical(@amount: 2em) {
+    padding-top: @amount;
+    padding-bottom: @amount;
+}
+
+.padding-horizontal(@amount: 5%) {
+    padding-left: @amount;
+    padding-right: @amount;
+}
+
+.border(@size: -.25em, @color: @color-dark-shadow) {
+    box-shadow: inset 0 @size 0 @color;
+}
+
+.responsiveWidth(@width) {
+    @media screen and (min-width: @breakpoint-sm) {
+        width: @breakpoint-sm - @width / 3;
+    }
+    @media screen and (min-width: @breakpoint-md) {
+        width: @breakpoint-md - @width / 2;
+    }
+    @media screen and (min-width: @breakpoint-lg) {
+        width: @breakpoint-lg - @width;
+    }
+}

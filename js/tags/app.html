@@ -1,0 +1,196 @@
+<app>
+    <a href="https://github.com/MartinMuzatko/riot-cheatsheet" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="head" layout="column" layout-align="start">
+        <div class="logo" layout="row" layout-align="space-around center">
+            <img src="http://riotjs.com/img/logo/riot60x.png" alt="" />
+            <span>2.4.1</span>
+        </div>
+        <p>Love this cheatsheet?
+            <iframe
+            style="vertical-align:middle"
+            src="https://ghbtns.com/github-btn.html?user=MartinMuzatko&repo=riot-cheatsheet&type=star&count=true"
+            frameborder="0"
+            scrolling="0" width="90px" height="20px"></iframe>
+        </p>
+        <nav flex-auto layout="column">
+            <a onclick={toggleItem} href="#cheatsheet-{doc}" class={active: name == doc} each={doc in docs}>{doc}</a>
+            <a flex-end href="#credits">credits</a>
+        </nav>
+    </header>
+
+    <menu>
+        <input
+            placeholder="find topic..."
+            onfocus={filterShortcuts}
+            oninput={filterShortcuts}
+            type="text"
+            name="filter">
+        <a
+            onclick={resetShortcuts}
+            if={shortcut.active}
+            each={shortcut in shortcuts}
+            href="#{shortcut.id}">
+            <highlight find={filter.value}>{shortcut.name}</highlight>
+        </a>
+    </menu>
+
+    <a onclick={removeClass} href="#head" name="top" class="top">
+        &DownBreve;
+    </a>
+
+    <main name="main">
+        <div>
+            <article
+                id="cheatsheet-{doc}"
+                each={doc in docs}>
+                <markdown file={doc}></markdown>
+            </article>
+        </div>
+    </main>
+
+    <footer id="credits">
+        <div>
+            <p>
+                Created with <span style="color: red">♥</span> by
+                <a href="https://github.com/MartinMuzatko">@MartinMuzatko</a>
+            </p>
+            <p>
+                Learn how to use Riot in the real world. Visit
+                <a href="https://happy-css.com">happy-css.com</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        this.shortcuts = []
+
+        this.docs = [
+            'templating',
+            'tag',
+            'mixin',
+            'observable',
+            'router',
+        ]
+
+        this.name = this.docs[0]
+
+        filterShortcuts(e) {
+            var value = this.filter.value.toUpperCase()
+            this.shortcuts.map(shortcut => {
+                if (
+                    !!~shortcut.name.toUpperCase().indexOf(value)
+                    || value == '*'
+                ) {
+                    shortcut.active = true
+                } else {
+                    shortcut.active = false
+                }
+                if (shortcut.group) {
+                    var levelNames = this.getGroupNames(shortcut)
+                    levelNames.map(level => {
+                        shortcut.active = !!~level.indexOf(value) ? true : shortcut.active
+                    })
+                }
+                if (!value.length) {
+                    shortcut.active = false
+                }
+            })
+        }
+
+        removeClass() {
+            this.top.classList.remove('active')
+        }
+
+        toggleItem(e) {
+            this.name = e.item.doc
+        }
+
+        this.resetShortcuts = () => {
+            this.shortcuts.map(shortcut => {shortcut.active = false})
+        }
+
+        this.getGroupNames = (node, result = []) => {
+            if (node.group) {
+                result.push(node.group.name.toUpperCase())
+                return this.getGroupNames(node.group, result)
+            } else {
+                return result
+            }
+        }
+
+        this.getGroupLevel = (node, level) => {
+            if (node.group && node.level != level) {
+                return this.getGroupLevel(node.group, level)
+            } else {
+                return node
+            }
+        }
+
+
+        this.on('mount', () => {
+
+            document.body.addEventListener('keydown', (event) => {
+                if (event.code == 'Escape') {
+                    if (document.activeElement == this.filter) {
+                        this.filter.blur()
+                        this.resetShortcuts()
+                        this.update()
+                    } else {
+                        this.filter.focus()
+                    }
+                }
+            })
+
+            // Back to Top button
+            new Waypoint({
+                element: this.main,
+                handler: (event) => {
+                    if (event == 'down') {
+                        this.top.classList.add('active')
+                    }
+                }
+            })
+            // ScrollSpy Alternative
+            for (var doc in this.docs) {
+                doc = this.docs[doc]
+                new Waypoint({
+                    element: this['cheatsheet-'+doc],
+                    riot: this,
+                    doc: doc,
+                    handler: function() {
+                        this.options.riot.name = this.options.doc
+                        this.options.riot.update()
+                    }
+                })
+            }
+
+            this.tags.markdown[this.tags.markdown.length-1].on('mount', () => {
+                this.shortcuts = []
+                var shortcuts = document.querySelectorAll('h1,h2,h3')
+                var level = 1
+                var currentNode = 1
+                var group = undefined
+                for (var i = 0; i < shortcuts.length; i++) {
+                    var shortcut = shortcuts[i]
+                    var levelBefore = level
+                    level = shortcut.tagName.replace(/\w/, '') | 0
+                    if (this.shortcuts.length) {
+                        group = this.getGroupLevel(this.shortcuts[currentNode-1], level-1)
+                    }
+                    if (level > levelBefore) {
+                        group = this.shortcuts[i-1]
+                        currentNode = i
+                    }
+                    this.shortcuts.push({
+                        id: shortcut.id,
+                        name: shortcut.innerText,
+                        active: false,
+                        level: level,
+                        group: group
+                    })
+                }
+                this.update()
+            })
+        })
+    </script>
+</app>

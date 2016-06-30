@@ -1,90 +1,215 @@
-/* BASE */
+/* ========================================
+BASE
+* Contains HTML default elements (b,i,u,table...)
+* Does not contain classes, ids
+* Can implement mixins
+======================================== */
+
+*
+{
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: .5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: @color-dark-shadow;
+}
+
+::-webkit-scrollbar-track {
+  background: @color-light-shadow;
+}
+
+/*  ========================================
+    BLOCK ELEMENTS
+    ======================================== */
+
+code, pre {
+    font-family: @font-code;
+}
+
+code {
+    color: @color-primary;
+}
 
 body, html
 {
-	background: @colorBackground;
-	background-repeat: repeat-y;
-	background-size: cover;
-	color: @colorFillDark;
-	font-family: @fontMain;
-	font-size: @fontMainSize;
-	height: 100%;
+    scroll-behavior: smooth;
+    background-color: @color-light;
+    min-width: 320px;
+    font-family: @font-body;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5em; // 24px / 150%
+    color: @color-dark;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
-a, .link
-{
-	text-decoration: none;
-	color: @colorMain;
+app {
+    height: 100%;
+    width: 100%;
 }
 
-h1, h2, h3
-{
-	margin: 0;
-	padding: .5em 0;
-	font-family: @fontTitle;
-	a:not(.anchor)
-	{
-		position: relative;
-		&:before, &:after
-		{
-			width: 1px;
-			height: 1px;
-			position: absolute;
-		}
-		&:before
-		{
-			left: -.2em;
-			background: @colorMain;
-			box-shadow: 
-				0 1px 0 0  @colorMain,
-				0 2px 0 0  @colorMain,
-				0 3px 0 0  @colorMain,
-				0 4px 0 0  @colorMain,
-				0 5px 0 0  @colorMain,
-				0 6px 0 0  @colorMain,
-				1px 0 0 0  @colorMain,
-				2px 0 0 0  @colorMain,
-				3px 0 0 0  @colorMain,
-				4px 0 0 0  @colorMain,
-				5px 0 0 0  @colorMain,
-				6px 0 0 0  @colorMain,
-			;
-		}
-	}
-	a.anchor
-	{
-		font-size: .8em;
-		visibility: hidden;
-	}
-	&:hover
-	{
-		a.anchor
-		{
-			visibility: visible;
-		}
-	}
+table {
+    margin: 1em 0 2em 0;
+    border-spacing: 0;
+    width: 100%;
+
+    thead {
+        background: darken(@color-light, 5%);
+    }
+
+    th {
+        font-family: @font-body, sans-serif;
+        font-weight: normal;
+        text-align: left;
+        background: darken(@color-light, 5%);
+        vertical-align: top;
+    }
+
+    tr {
+        th,
+        td {
+            vertical-align: top;
+            padding: .75em .75em .25em .5em;
+            border-bottom: 1px solid darken(@color-light, 10%);
+        }
+    }
 }
 
-h2
+
+/*  ========================================
+    TEXTUAL/CONTENT ELEMENTS
+    ======================================== */
+
+h1, h2, h3, h4, h5, h6
 {
-	text-transform: uppercase;
-	color: @colorMain;
+    margin: 0;
+    margin: 1em 0;
+    line-height: 1.25em;
+    text-transform: none;
+    font-family: @font-heading;
+    font-weight: 400;
 }
 
-p > code
-{
-	background: rgba(0,0,0,.03);
-	padding: 0 .2em;
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    padding-top: 1.5em;
+    text-transform: uppercase;
 }
 
-p:first-child
-{
-	font-size: 1.1em;
+h2 {
+    font-size: 1.5em;
+    color: @color-primary;
 }
 
-article img,
-p img,
-footer img
+h3, h3 a {
+    font-size: 1.15em;
+    color: @color-primary;
+}
+
+h4 {
+    font-size: 1rem;
+    color: @color-primary;
+}
+
+hr
 {
-	max-width: 100%;
+    margin: 1em 0;
+    border: none;
+    width: 100%;
+    height: .1rem;
+    background-color: lighten(@color-dark, 50%);
+}
+
+p
+{
+    padding: 0;
+    margin: 1em 0;
+    line-height: 1.5em;
+    word-wrap: break-word;
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+a
+{
+    position: relative;
+    transition: all @duration-action ease;
+    color: @color-primary;
+    text-decoration: none;
+    cursor: pointer;
+    outline: 0;
+    &:hover {
+        color: @color-primary;
+    }
+
+    img
+    {
+        border: none;
+        outline: none;
+    }
+
+    p,
+    span
+    {
+        cursor: pointer;
+    }
+}
+
+img
+{
+    max-width: 100%;
+    height: auto;
+}
+
+ul
+{
+    list-style: square;
+}
+
+ul,ol
+{
+    padding: 0 0 0 1em;
+    margin-bottom: 0;
+}
+
+ol
+{
+    list-style-type: decimal;
+    ol {
+        list-style-type: lower-alpha;
+    }
+}
+
+b, strong {
+    font-weight: 700;
+    font-family: @font-body, sans-serif;
+}
+
+/*  ========================================
+    FORM ELEMENTS
+    ======================================== */
+
+fieldset
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+input[type=submit] {
+    .button(@color-primary, outline-reverse);
+    margin: 0;
 }

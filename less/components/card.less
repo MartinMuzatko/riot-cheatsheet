@@ -1,0 +1,36 @@
+/* ========================================
+CARD COMPONENT
+* Defines a rectangular area, used for a specific kind of content
+* containing a title, description and actions (buttons/icons)
+* a card is often used together with grid systems to evenly
+* distribute related content.
+* Cards contain little and scannable content to quickly get to the desired
+* full content. Thus, a description should contain not more than 140 letters
+*
+* @type
+======================================== */
+
+.card(@color: @color-primary, @size: small, @action: false, @action-color: lighten(@color, 10%)) {
+    background-color: @color;
+    & when (@action = true) {
+        transition: all @duration-action ease;
+        cursor: pointer;
+        &:hover
+        {
+            background-color: lighten(@color, 10%);
+            & when (iscolor(@action-color)) {
+                background-color: @action-color;
+            }
+        }
+    }
+
+    & when (@size = small) {
+        padding: 1em;
+    }
+    & when (@size = medium) {
+        padding: 2.5em;
+    }
+    & when (@size = large) {
+        padding: 4em;
+    }
+}

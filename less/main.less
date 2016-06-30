@@ -1,32 +1,17 @@
-/* DON'T CHANGE THE STYLE.CSS !!!
- * ------------------------------
- * PLEASE REFER TO THE LESS FILES
- * FOUND IN less/
- * ------------------------------
- * MAIN: IMPORTING ALL SUBMODULES AND TOOLS
- * LAYOUT: APPLYING EVERY COMPONENT
- */
+@import (less) url(../node_modules/normalize.css/normalize.css);
+@import (less) url(../node_modules/prismjs/themes/prism-coy.css);
 
-/* VENDOR STYLES */
+@import url(https://fonts.googleapis.com/css?family=Cousine);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700);
 
-@import url(vendor/normalize.less);
-@import url(vendor/angular-grid.css);
+@import url('vendor/flex-grid.less');
 
-/* FONTS */
+@import url('variables.less');
+@import url('mixins.less');
 
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
-//@import url(http://fonts.googleapis.com/css?family=Kreon:400,700);
-@import url(http://fonts.googleapis.com/css?family=Asap:400,700);
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300italic,300);
+@import url('components/button.less');
+@import url('components/card.less');
+@import url('components/stripe.less');
 
-/* UTILITIES */
-
-@import url(variables.less);
-@import url(tools.less);
-@import url(grid.less);
-
-/* MAIN */
-
-@import url(base.less);
-@import url(forms.less);
-@import url(layout.less);
+@import url('base.less');
+@import url('layout.less');
