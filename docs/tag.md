@@ -61,6 +61,11 @@ this.on('*', (eventType) => {
 
 ## Tag Methods & Properties
 
+### on, one, off, trigger
+
+A riot tag already implements a `riot.observable`
+See [observable](#observable)
+
 ### Update
 
 Shortcut for [trigger](#trigger) `this.trigger('update')`
