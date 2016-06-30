@@ -21,8 +21,11 @@
             onblur={resetShortcuts}
             type="text"
             name="filter">
-        <a if={shortcut.active} each={shortcut in shortcuts} href="#{shortcut.id}">
-            {shortcut.name}
+        <a
+            if={shortcut.active}
+            each={shortcut in shortcuts}
+            href="#{shortcut.id}">
+            <highlight find={filter.value}>{shortcut.name}</highlight>
         </a>
     </menu>
 

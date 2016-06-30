@@ -1,0 +1,25 @@
+<highlight>
+    <div name="result"></div>
+    <div style="display: none;" name="content">
+        <yield>
+    </div>
+    <script>
+        this.on('update', () => {
+            //this.opts.find
+            var content = this.content.innerText
+            var searchQueries = this.opts.find.toLowerCase().split(' ')
+            // highlight all parts of strings that were found
+            for (var searchQuery in searchQueries) {
+                searchQuery = searchQueries[searchQuery]
+                if (!!~content.toLowerCase().indexOf(searchQuery)) {
+                    content = content.replace(
+                        // replace occurences only once
+                        new RegExp(`(${searchQuery})(?!\<\/b\>)`, 'i'),
+                        '<b>$1</b>'
+                    )
+                }
+            }
+            this.result.innerHTML = content
+        })
+    </script>
+</highlight>
