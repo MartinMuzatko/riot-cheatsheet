@@ -75,24 +75,33 @@
         this.name = this.docs[0]
 
         filterShortcuts(e) {
-            var value = this.filter.value.toUpperCase()
+            var value = this.filter.value.toUpperCase().replace(/\s$/, '')
             this.shortcuts.map(shortcut => {
-                if (
-                    !!~shortcut.name.toUpperCase().indexOf(value)
-                    || value == '*'
-                ) {
+                var name = shortcut.name.toUpperCase()
+                shortcut.active = false
+                if (value == '') {
+                    return
+                }
+                if (value == '*') {
                     shortcut.active = true
-                } else {
-                    shortcut.active = false
+                    return
+                }
+                if (!!~name.indexOf(value)) {
+                    shortcut.active = true
+                }
+                if (value.split(' ').length > 1) {
+                    var values = value.split(' ')
+                    for (var val in values) {
+                        if (!!~name.indexOf(values[val])) {
+                            shortcut.active = true
+                        }
+                    }
                 }
                 if (shortcut.group) {
                     var levelNames = this.getGroupNames(shortcut)
                     levelNames.map(level => {
                         shortcut.active = !!~level.indexOf(value) ? true : shortcut.active
                     })
-                }
-                if (!value.length) {
-                    shortcut.active = false
                 }
             })
         }
