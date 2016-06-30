@@ -6,7 +6,13 @@
             <img src="http://riotjs.com/img/logo/riot60x.png" alt="" />
             <span>2.4.1</span>
         </div>
-        <p flex="10">Love this cheatsheet? <iframe style="vertical-align:middle" src="https://ghbtns.com/github-btn.html?user=MartinMuzatko&repo=riot-cheatsheet&type=star&count=true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe></p>
+        <p>Love this cheatsheet?
+            <iframe
+            style="vertical-align:middle"
+            src="https://ghbtns.com/github-btn.html?user=MartinMuzatko&repo=riot-cheatsheet&type=star&count=true"
+            frameborder="0"
+            scrolling="0" width="90px" height="20px"></iframe>
+        </p>
         <nav flex-auto layout="column">
             <a onclick={toggleItem} href="#cheatsheet-{doc}" class={active: name == doc} each={doc in docs}>{doc}</a>
             <a flex-end href="#credits">credits</a>
@@ -18,10 +24,10 @@
             placeholder="find topic..."
             onfocus={filterShortcuts}
             oninput={filterShortcuts}
-            onblur={resetShortcuts}
             type="text"
             name="filter">
         <a
+            onclick={resetShortcuts}
             if={shortcut.active}
             each={shortcut in shortcuts}
             href="#{shortcut.id}">
