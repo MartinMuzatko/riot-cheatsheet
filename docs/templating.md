@@ -37,7 +37,7 @@ this.unit = 'year'
 ### Ternary
 
 ```html
-<div class={item.active ?: 'active' : ''}></div>
+<div class={item.active ? 'active' : ''}></div>
 ```
 
 ### Blocklevel
