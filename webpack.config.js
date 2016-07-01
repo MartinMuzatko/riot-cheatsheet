@@ -1,8 +1,8 @@
 var webpack = require('webpack')
 var prism = require('prismjs')
-var marked = require('marked')
 var autoprefixer = require('autoprefixer')
 
+var marked = require('marked')
 var renderer = new marked.Renderer()
 renderer.code = (code, language) => {
     var html = prism.highlight(code, prism.languages.javascript)
