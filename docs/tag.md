@@ -43,7 +43,7 @@ this.on('before-unmount', () => {
 })
 ```
 
-### before-unmount
+### unmount
 
 ```js
 this.on('unmount', () => {
