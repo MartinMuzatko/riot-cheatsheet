@@ -25,6 +25,60 @@ this.author = {
 this.unit = 'year'
 </script>
 ```
+## Foreach - loop data
+
+### Array
+
+```html
+<nav>
+    <a href="#{doc}" each={doc in docs}>
+        {doc}
+    </a>
+</nav>
+<script>
+    this.docs = [
+        'templating',
+        'tag',
+        'mixin',
+        'observable',
+        'router'
+    ]
+</script>
+```
+
+You can access both index and value by providing a second argument
+
+```html
+<nav>
+    <a href="#{doc}" each={doc, index in docs}>
+        {index + 1} - {doc}
+    </a>
+</nav>
+```
+
+### Object
+
+Used for more complex structures, where each item has a distinct key
+
+Objects use different order of `key, value` in the each statement
+
+```html
+<card size={card.size} name={title}
+      each={title, card in cards}>
+</card>
+<script>
+    this.cards = {
+        analytics : {
+            size: 1,
+            toolbar: ['reset']
+        },
+        posts: {
+            size: 2,
+            toolbar: ['add', 'list']
+        }
+    }
+</script>
+```
 
 ## Conditionals
 
