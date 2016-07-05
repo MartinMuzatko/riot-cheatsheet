@@ -97,6 +97,20 @@ h1, h2, h3, h4, h5, h6
     font-weight: 400;
 }
 
+h1,h2,h3,h4 {
+    position: relative;
+    a {
+        position: absolute;
+        left: -1em;
+        width: calc(~'100% + 1em');
+        opacity: 0;
+        transition: @duration-hover all ease;
+    }
+    &:hover a {
+        opacity: 1;
+    }
+}
+
 h1 {
     font-size: 2.5em;
     margin: 0;

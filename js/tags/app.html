@@ -182,13 +182,19 @@
                 var currentNode = 1
                 var group = undefined
                 for (var i = 0; i < shortcuts.length; i++) {
+
                     var shortcut = shortcuts[i]
                     var levelBefore = level
                     level = shortcut.tagName.replace(/\w/, '') | 0
+
+                    shortcut.innerHTML = `<a href="#${shortcut.id}">#</a>` + shortcut.innerHTML
+
+                    // Generate group hirarchy based on heading level
                     if (this.shortcuts.length) {
                         group = this.getGroupLevel(this.shortcuts[currentNode-1], level-1)
                     }
                     if (level > levelBefore) {
+                        // Recursively build group
                         group = this.shortcuts[i-1]
                         currentNode = i
                     }
