@@ -60,8 +60,10 @@ riot.route('/index', () => {})
 ### Route with wildcard
 
 Regex for wildcards:
-* - `([^/?#]+?)`
-.. - `.*`
+
+\*  `([^/?#]+?)`
+
+..  `.*`
 
 This route will catch everything that is a subroute of `blog`
 
