@@ -4,7 +4,7 @@
     <header id="head" layout="column" layout-align="start">
         <div class="logo" layout="row" layout-align="space-around center">
             <img src="http://riotjs.com/img/logo/riot60x.png" alt="" />
-            <span>2.4.1</span>
+            <span>{version}</span>
         </div>
         <p>Love this cheatsheet?
             <iframe
@@ -73,6 +73,8 @@
         ]
 
         this.name = this.docs[0]
+
+        this.version = riot.version
 
         filterShortcuts(e) {
             var value = this.filter.value.toUpperCase().replace(/\s$/, '')
