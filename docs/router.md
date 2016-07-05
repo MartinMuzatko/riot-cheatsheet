@@ -86,3 +86,15 @@ riot.route('/old..', () => {
     // Sorry, this page has been removed
 })
 ```
+
+## Subroutes
+
+Subroutes overwrite existing routes, based on context
+
+```js
+var subRoute = riot.route.create()
+subRoute('/blog/tags', () => {
+    // Instead of looking for a post named tags
+    // List all tags used in posts
+})
+```
