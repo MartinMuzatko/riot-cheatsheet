@@ -29,9 +29,21 @@ riot.route('customer/edit/289')
 
 ### Start listening
 
+This starts the router, and examines the hash that is already in place
+**Notice:** This feature is supported in **Riot 2.3** or later
+
 ```js
 riot.route.start(true)
 ```
+
+In earlier versions of riot, this was done with
+
+```js
+riot.route.start()
+riot.route.exec()
+```
+
+You can also separately set them up, if you like to
 
 ## Advanced setup
 
