@@ -1,5 +1,19 @@
 # Templating
 
+## Anatomy
+
+Everything is a component, Riot refers to them as tags
+Tags have to be [mounted](#mount)
+
+```html
+<example>
+    <b>Markup</b>
+    <script>
+        // Script
+    </script>
+</example>
+```
+
 ## Expressions
 
 ### Pure Javscript
