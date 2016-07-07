@@ -94,6 +94,19 @@ Objects use different order of `key, value` in the each statement
 </script>
 ```
 
+### Virtual
+
+The virtual tag is used for loops that should generate no wrapper markup
+
+```html
+<dl>
+    <virtual each={item in items}>
+        <dt>{item.key}</dt>
+        <dd>{item.value}</dd>
+    </virtual>
+</dl>
+```
+
 ## Conditionals
 
 ### Shorthand ternary
