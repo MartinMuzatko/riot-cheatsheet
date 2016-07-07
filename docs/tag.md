@@ -4,58 +4,66 @@
 
 ### before-mount
 
+Before the tag is mounted
+
 ```js
 this.on('before-mount', () => {
-    // Before the tag is mounted
 })
 ```
 
 ### mount
 
 
+After all expressions are evaluated on mount
+
 ```js
 this.on('mount', () => {
-    // After all expressions are evaluated on mount
 })
 ```
 
 ### update
 
+Allows recalculation of data before updating
+
 ```js
 this.on('update', () => {
-    // Allows recalculation of data before updating
 })
 ```
 
 ### updated
 
+After updates
+
 ```js
 this.on('updated', () => {
-    // After updates
 })
 ```
 
 ### before-unmount
 
+Before the tag is removed
+
 ```js
 this.on('before-unmount', () => {
-    // Before the tag is removed
 })
 ```
 
 ### unmount
 
+After the tag is removed
+
 ```js
 this.on('unmount', () => {
-    // After the tag is removed
 })
 ```
 
 ### all events
 
+Listen to all events
+You can fetch the event name if desired
+
 ```js
-this.on('*', (eventType) => {
-    console.log(eventType)
+this.on('*', (eventName) => {
 })
 ```
 
