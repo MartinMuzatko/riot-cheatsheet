@@ -32,10 +32,10 @@ How long is a day in seconds? {60*60*24}
 My name is {author.name}
 and I'm {author.age} {unit}s old
 <script>
-this.author = {
-    name: 'Martin',
-    age: 25
-}
+    this.author = {
+        name: 'Martin',
+        age: 25
+    }
 this.unit = 'year'
 </script>
 ```
