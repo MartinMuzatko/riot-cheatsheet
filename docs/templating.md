@@ -226,7 +226,7 @@ riot.mount('todo-list', items)
 
 ## Yield
 
-Yielding is like [options](#options), just that it accepts HTML and other riot tags.
+Yielding is like [options](#options), just that it accepts HTML and other riot tags
 
 Definition
 ```html
@@ -243,4 +243,33 @@ Usage
 </popup-body>
 ```
 
-### Multi Yieldpoints
+### Multiple Yieldpoints
+
+**Notice:** This feature is supported in **Riot 2.3.12** or later
+
+#### Usage
+
+```html
+<card>
+    <yield to="toolbar">
+        <a>Add post</a>
+        <a>Recently published</a>
+    </yield>
+    <yield to="header">
+        <i class="fa fa-text"></i> Posts
+    </yield>
+</card>
+```
+
+#### Definition
+
+```html
+<card>
+    <h2>
+        <yield from="header" />
+    </h2>
+    <div class="toolbar">
+        <yield from="toolbar" />
+    </div>
+</card>
+```
