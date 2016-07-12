@@ -131,6 +131,9 @@
         }
 
         this.getGroupLevel = (node, level) => {
+            if (!node) {
+                return node
+            }
             if (node.group && node.level != level) {
                 return this.getGroupLevel(node.group, level)
             } else {
@@ -185,11 +188,22 @@
                 for (var i = 0; i < shortcuts.length; i++) {
 
                     var shortcut = shortcuts[i]
+                    var previousShortcut = this.shortcuts[i-1]
                     var levelBefore = level
+                    var id = shortcut.id
                     level = shortcut.tagName.replace(/\w/, '') | 0
 
+                    // Concatenate ids of groups,
+                    // this way we can refer to #templating-mount instead of #tag-mount
+                    var highestGroup = this.getGroupLevel(previousShortcut, 1)
+                    if (highestGroup && level>1) {
+                        id = `${highestGroup.id}-${shortcut.id}`
+                    }
+                    shortcut.id = id
+
+
                     // Add shortcut link
-                    shortcut.innerHTML = `<a href="#${shortcut.id}">#</a>` + shortcut.innerHTML
+                    shortcut.innerHTML = `<a href="#${id}">#</a>` + shortcut.innerHTML
 
                     // Generate group hirarchy based on heading level
                     if (this.shortcuts.length) {
@@ -197,11 +211,11 @@
                     }
                     if (level > levelBefore) {
                         // Recursively build group
-                        group = this.shortcuts[i-1]
+                        group = previousShortcut
                         currentNode = i
                     }
                     this.shortcuts.push({
-                        id: shortcut.id,
+                        id: id,
                         name: shortcut.innerText.replace(/#/g, ''),
                         active: false,
                         level: level,
