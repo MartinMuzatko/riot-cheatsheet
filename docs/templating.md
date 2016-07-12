@@ -3,7 +3,7 @@
 ## Anatomy
 
 Everything is a component, Riot refers to them as tags
-Tags have to be [mounted](#mount)
+Tags have to be [mounted](#riot-mount)
 
 ```html
 <example>
@@ -214,6 +214,7 @@ Options only accept `boolean`, `number`, `string` or simple `array`, when passin
 ### Passing values on Mount
 
 On mount, we are more flexible, since we are in js
+See [mount](#riot-mount)
 
 ```js
 var items = [

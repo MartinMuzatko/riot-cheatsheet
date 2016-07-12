@@ -76,7 +76,7 @@ See [observable](#observable)
 
 ### Update
 
-Shortcut for [trigger](#trigger) `this.trigger('update')`
+Shortcut for [trigger](#observable-trigger) `this.trigger('update')`
 
 ```js
 this.update()
@@ -109,7 +109,7 @@ See [Mixins](#mixins)
 
 ### tags
 
-See [Child tags](#child-tags)
+See [Child tags](#templating-child-tags)
 
 ### parent
 
