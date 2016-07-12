@@ -8,7 +8,8 @@ There are various ways to mount your tags
 ### All
 
 This will mount all tags and their children tags
-**Notice** This will not mount dynamically loaded tags such as with a router
+
+**Notice:** This will not mount dynamically loaded tags such as with a router
 
 ```js
 riot.mount('*')
