@@ -100,7 +100,7 @@ this.root // reference to riot tag
 
 ### opts
 
-Options passed via HTML or on mount, See [options](#options)
+Options passed via HTML or on mount, See [options](#templating-options)
 
 ### mixin
 

@@ -227,7 +227,7 @@ riot.mount('todo-list', items)
 
 ## Yield
 
-Yielding is like [options](#options), just that it accepts HTML and other riot tags
+Yielding is like [options](#templating-options), just that it accepts HTML and other riot tags
 
 Definition
 ```html
