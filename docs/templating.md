@@ -16,7 +16,7 @@ Tags have to be [mounted](#riot-mount)
 
 ## Expressions
 
-### Pure Javscript
+### Pure JavaScript
 
 Can contain any javascript except curly brackets
 
