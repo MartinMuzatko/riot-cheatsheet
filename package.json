@@ -35,7 +35,7 @@
     "postcss": "^5.0.21",
     "postcss-loader": "^0.9.1",
     "prismjs": "^1.5.1",
-    "riot": "^2.5.0",
+    "riot": "^2.6.1",
     "riot-loader": "^1.0.0",
     "riotjs-loader": "^3.0.0",
     "source-map-loader": "^0.1.5",
