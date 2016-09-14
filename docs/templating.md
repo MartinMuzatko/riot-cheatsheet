@@ -185,9 +185,9 @@ If there are more instances, you get an array of tags
 
 Options can be passed via html params or on mount
 
-Options only accept `boolean`, `number`, `string` or simple `array`, when passing directly
+Options only accept `boolean`, `number`, `string` or simple `array`, when passing values directly
 
-### Passing values per HTML
+### Passing values directly per HTML
 
 ```html
 <todo-item name="Finish Cheatsheet" done={false}>
@@ -199,7 +199,7 @@ Options only accept `boolean`, `number`, `string` or simple `array`, when passin
 </script>  
 ```
 
-### Passing vars per HTML
+### Passing variables per HTML
 
 ```html
 <todo-item item={item}></todo-item>
