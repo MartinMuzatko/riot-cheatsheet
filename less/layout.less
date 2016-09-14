@@ -123,6 +123,17 @@ header {
 
 main {
 	.container(@color-light);
+	a {
+		border-bottom: 1px dashed @color-primary;
+		&:hover {
+			border-bottom: 1px solid @color-primary;
+		}
+	}
+	h1,h2,h3,h4,h5,h6 {
+		a, a:hover {
+			border-bottom: none;
+		}
+	}
 }
 
 footer {
