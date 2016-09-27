@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var prism = require('prismjs')
 var autoprefixer = require('autoprefixer')
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 var marked = require('marked')
 var renderer = new marked.Renderer()
@@ -40,7 +41,17 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             riot: 'riot'
-        })
+        }),
+        new BrowserSyncPlugin(
+            {
+                host: 'localhost',
+                port: 8081,
+                proxy: 'http://localhost:8080/'
+            },
+            {
+                reload: true
+            }
+        )
     ],
     eslint: {
         configFile: './.eslintrc'
