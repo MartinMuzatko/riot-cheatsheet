@@ -150,21 +150,21 @@ Opposite of Hide `display`
 
 ### HTML Elements
 
-You can also use `id` if you are not comfortable with `name`
+To access your elements, use the `ref` attribute.
 
 ```html
-<input name="todo">
+<input ref="todo">
 <script>
-    this.todo.value = 'write todolist'
+    this.refs.todo.value = 'write todolist'
 </script>
 ```
 
 ### Child tags
 
-Access via `name` or `id`
+These are also accessed via the `refs`
 
 ```html
-<todo-item name="first"></todo-item>
+<todo-item ref="first"></todo-item>
 <script>
     this.tags.first
 </script>  
@@ -175,7 +175,7 @@ If there are more instances, you get an array of tags
 ```html
 <todo-item></todo-item>
 <todo-item></todo-item>
-<todo-item name="last"></todo-item>
+<todo-item ref="last"></todo-item>
 <script>
     this.tags['todo-item'] // Array<Tag> - 2
     this.tags.last // <Tag> - 1
