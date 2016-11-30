@@ -1,8 +1,16 @@
 <markdown>
-    <div name="content"></div>
+    <!-- <div name="content"></div> -->
     <script>
-        this.on('mount', () => {
-            this.content.outerHTML = require(`../../docs/${opts.file}.md`)
+        this.on('updated', () => {
+            this.setMarkdown()
         })
+
+        this.on('mount', () => {
+            this.setMarkdown()
+        })
+
+        this.setMarkdown = () => {
+            this.root.innerHTML = require(`../../docs/${opts.version}/${opts.file}.md`)
+        }
     </script>
 </markdown>

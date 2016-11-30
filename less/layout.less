@@ -4,14 +4,21 @@
 
 @navigation-indent: 10em;
 
-.logo {
+.versionpicker {
+	color: @color-light;
+	padding: .5em 0;
 	img {
 		border: 1px solid @color-light;
 		border-radius: 2px;
+		margin-right: .5eml
 	}
-	a {
-		color: @color-light;
-		padding-left: .5em;
+	&:hover, &.active {
+		color: @color-primary;
+		> * {
+			color: @color-primary;
+		}
+		box-shadow: inset -.125em 0 @color-primary;
+		background: @color-light;
 	}
 }
 
@@ -57,6 +64,7 @@ header {
 		width: @navigation-indent;
 		left: 0;
 		top: 0;
+		padding: 1em 0;
 		height: 100%;
 		box-shadow: inset -.125em 0 @color-dark-shadow;
 	}
@@ -70,10 +78,7 @@ header {
 	color: @color-light;
 	padding: @indent-large 0;
 	p {
-		padding: 1em;
-	}
-	nav {
-		padding-top: 1em;
+		padding: .5em 1em;
 	}
 	nav a {
         display: block;
@@ -147,9 +152,13 @@ article {
 
 
 .github-corner {
-	position: absolute;
 	top: 0;
 	right: 0;
+	position: absolute;
+	z-index: 100;
+	@media screen and (min-width:@breakpoint-sm) {
+		position: fixed;
+	}
 }
 
 code[class*=language] {
