@@ -14,7 +14,7 @@
             scrolling="0" width="90px" height="20px"></iframe>
         </p>
         <nav flex-auto layout="column">
-            <a onclick={toggleItem} href="#cheatsheet-{doc}" class={active: name == doc} each={doc in docs}>{doc}</a>
+            <a onclick={switchDocumentation} href="#cheatsheet-{doc}" class={active: name == doc} each={doc in docs}>{doc}</a>
             <a flex-end href="#credits">credits</a>
         </nav>
     </header>
@@ -121,7 +121,7 @@
             this.top.classList.remove('active')
         }
 
-        toggleItem(e) {
+        switchDocumentation(e) {
             this.name = e.item.doc
         }
 
