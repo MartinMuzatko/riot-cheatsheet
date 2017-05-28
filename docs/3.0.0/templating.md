@@ -108,6 +108,10 @@ The virtual tag is used for loops that should generate no wrapper markup
 </dl>
 ```
 
+### Context
+
+Loops have their own context. Instead of `item.key`, you could obtain the property just with `key`. Because of this, methods and properties of the tag instance itself, have to be accessed with for example `parent.removeItem`
+
 ## Conditionals
 
 ### Shorthand ternary
