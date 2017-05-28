@@ -154,7 +154,7 @@ Opposite of Hide `display`
 
 ### HTML Elements
 
-To access your elements, use the `ref` attribute.
+To access your elements, use the `ref` attribute. References can then be accessed with `this.refs`
 
 ```html
 <input ref="todo">
