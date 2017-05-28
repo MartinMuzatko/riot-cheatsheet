@@ -19,7 +19,7 @@ Tags have to be [mounted](#riot-mount)
 
 ### Pure JavaScript
 
-Can contain any javascript except curly brackets
+Expressions `{}` can contain any javascript except curly brackets (object literals)
 
 ```html
 Random number: {Math.random() * 10}
@@ -35,7 +35,7 @@ and I'm {author.age} {unit}s old
 <script>
     this.author = {
         name: 'Martin',
-        age: 25
+        age: 26
     }
 this.unit = 'year'
 </script>
