@@ -50,10 +50,10 @@ With a `data` attribute, you can mount a tag into an element
 You can also use a DOM node to mount your tag
 
 ```html
-<main name="content">
+<main ref="content">
 <script>
     // At maximum, riot.mount takes three arguments
-    riot.mount(this.content, 'todo-list', {items: ['be nice', 'share your knowledge', 'give feedback']})
+    riot.mount(this.refs.content, 'todo-list', {items: ['be nice', 'share your knowledge', 'give feedback']})
 </script>
 ```
 

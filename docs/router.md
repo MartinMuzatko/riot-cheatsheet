@@ -13,11 +13,11 @@ The function works with any amount of parameters
 **Recommendation:** Put your routing setup within `this.on('mount', () => {})` in your main tag, that controls everything (e.g. `app.html`)
 
 ```html
-<main name="content"></main>
+<main ref="content"></main>
 <script>
 riot.route((collection, action, id) => {
     // Mount another tag, or do something with the data
-    riot.mount(this.content, collection, {view: action, id: id})
+    riot.mount(this.refs.content, collection, {view: action, id: id})
 })
 </script>
 ```

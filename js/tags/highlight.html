@@ -1,12 +1,10 @@
 <highlight>
-    <div name="result"></div>
-    <div style="display: none;" name="content">
-        <yield>
-    </div>
+    <div ref="result"></div>
     <script>
         this.on('update', () => {
             //this.opts.find
-            var content = this.content.innerText
+            // var content = this.refs.content.innerText
+            var content = this.opts.name
             var searchQueries = this.opts.find.toLowerCase().split(' ')
             // highlight all parts of strings that were found
             for (var searchQuery in searchQueries) {
@@ -19,7 +17,7 @@
                     )
                 }
             }
-            this.result.innerHTML = content
+            this.refs.result.innerHTML = content
         })
     </script>
 </highlight>

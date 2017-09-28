@@ -68,22 +68,23 @@ header {
 		height: 100%;
 		box-shadow: inset -.125em 0 @color-dark-shadow;
 	}
-	p {
-		color: @color-dark;
-		background: @color-light;
-		box-shadow: inset -.125em 0 @color-dark-shadow;
-
-	}
+    overflow-y: auto;
 	background: @color-primary;
 	color: @color-light;
 	padding: @indent-large 0;
 	p {
+        color: @color-dark;
+        background: @color-light;
+        box-shadow: inset -.125em 0 @color-dark-shadow;
 		padding: .5em 1em;
 	}
-	nav a {
+	.nav__item {
         display: block;
 		color: @color-light;
 		padding: 1em;
+        @media screen and (max-width: @breakpoint-md) {
+            padding: .5em;
+        }
 		text-transform: uppercase;
 		&:hover, &.active {
 			background: @color-light;

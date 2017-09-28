@@ -1,4 +1,3 @@
-2.6.7
 # Templating
 
 ## Anatomy
@@ -19,7 +18,7 @@ Tags have to be [mounted](#riot-mount)
 
 ### Pure JavaScript
 
-Can contain any javascript except curly brackets
+Expressions `{}` can contain any javascript except curly brackets (object literals)
 
 ```html
 Random number: {Math.random() * 10}
@@ -35,7 +34,7 @@ and I'm {author.age} {unit}s old
 <script>
     this.author = {
         name: 'Martin',
-        age: 25
+        age: 26
     }
 this.unit = 'year'
 </script>
@@ -108,6 +107,10 @@ The virtual tag is used for loops that should generate no wrapper markup
 </dl>
 ```
 
+### Context
+
+Loops have their own context. Instead of `item.key`, you could obtain the property just with `key`. Because of this, methods and properties of the tag instance itself, have to be accessed with for example `parent.removeItem`
+
 ## Conditionals
 
 ### Shorthand ternary
@@ -150,21 +153,21 @@ Opposite of Hide `display`
 
 ### HTML Elements
 
-You can also use `id` if you are not comfortable with `name`
+To access your elements, use the `ref` attribute. References can then be accessed with `this.refs`
 
 ```html
-<input name="todo">
+<input ref="todo">
 <script>
-    this.todo.value = 'write todolist'
+    this.refs.todo.value = 'write todolist'
 </script>
 ```
 
 ### Child tags
 
-Access via `name` or `id`
+These are also accessed via the `refs`
 
 ```html
-<todo-item name="first"></todo-item>
+<todo-item ref="first"></todo-item>
 <script>
     this.tags.first
 </script>  
@@ -175,7 +178,7 @@ If there are more instances, you get an array of tags
 ```html
 <todo-item></todo-item>
 <todo-item></todo-item>
-<todo-item name="last"></todo-item>
+<todo-item ref="last"></todo-item>
 <script>
     this.tags['todo-item'] // Array<Tag> - 2
     this.tags.last // <Tag> - 1

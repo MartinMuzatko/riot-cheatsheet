@@ -1,7 +1,8 @@
 var webpack = require('webpack')
+var path = require('path')
 var prism = require('prismjs')
-var autoprefixer = require('autoprefixer')
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+// var autoprefixer = require('autoprefixer')
+// var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 var marked = require('marked')
 var renderer = new marked.Renderer()
@@ -14,47 +15,35 @@ renderer.code = (code, language) => {
 module.exports = {
     entry: './index.js',
     output: {
-        path: './',
+        path: path.resolve('./'),
         filename: 'bundle.js',
-        sourceMapFilename: "[name].js.map",
+        sourceMapFilename: "bundle.js.map",
     },
     module: {
-        preLoaders: [
-            { test: /\.html$/, loader: 'riotjs' },
-            { test: /\.js$/, loader: 'eslint!source-map' },
-        ],
-        loaders: [
-            { test: /\.md$/, loader: 'html!markdown'},
+        rules: [
+            { test: /\.html$/, loader: 'riotjs', enforce: 'pre' },
+            { test: /\.md$/, use: [
+                'html',
+                {
+                    loader: 'markdown',
+                    options: {
+                        renderer: renderer
+                    }
+                }
+            ]},
             { test: /\.(jpe?g|png|gif|svg|mp4)$/i, loader: 'file'},
-            { test: /\.html$|\.js$/, loader: 'babel', query: { presets: 'es2015-riot' }},
-            { test: /\.less$/, loader: 'style!css?minimize!postcss!less'},
+            { test: /\.html$|\.js$/, loader: 'babel', options: { presets: 'es2015-riot' }},
+            { test: /\.less$/, loader: ['style','css','less']},
         ]
     },
-    markdownLoader: {
-        renderer: renderer
+    resolveLoader: {
+        moduleExtensions: ["-loader"]
     },
-    postcss: () => {
-        return [
-            autoprefixer({browsers: 'last 2 versions'})
-        ];
-    },
+    target: 'web',
     plugins: [
         new webpack.ProvidePlugin({
             riot: 'riot'
-        }),
-        new BrowserSyncPlugin(
-            {
-                host: 'localhost',
-                port: 8081,
-                proxy: 'http://localhost:8080/'
-            },
-            {
-                reload: true
-            }
-        )
+        })
     ],
-    eslint: {
-        configFile: './.eslintrc'
-    },
     devtool: 'source-map'
 }
